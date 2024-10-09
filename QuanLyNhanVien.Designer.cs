@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ThemNV = new System.Windows.Forms.Button();
             this.SuaNV = new System.Windows.Forms.Button();
             this.XoaNV = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.exitNV = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,17 +82,6 @@
             this.XoaNV.UseVisualStyleBackColor = true;
             this.XoaNV.Click += new System.EventHandler(this.XoaNV_Click);
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(351, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(430, 60);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "Quản lý nhân viên";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
             // exitNV
             // 
             this.exitNV.Location = new System.Drawing.Point(948, 271);
@@ -100,13 +92,39 @@
             this.exitNV.UseVisualStyleBackColor = true;
             this.exitNV.Click += new System.EventHandler(this.exitNV_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Thông tin nhân viên";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Mistral", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(354, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(427, 71);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Quản lý nhân viên";
+            // 
             // QuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1161, 555);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.exitNV);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.XoaNV);
             this.Controls.Add(this.SuaNV);
             this.Controls.Add(this.ThemNV);
@@ -115,6 +133,7 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -124,8 +143,10 @@
         private System.Windows.Forms.Button ThemNV;
         private System.Windows.Forms.Button SuaNV;
         private System.Windows.Forms.Button XoaNV;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button exitNV;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
