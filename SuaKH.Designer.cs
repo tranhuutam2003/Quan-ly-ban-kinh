@@ -91,6 +91,7 @@
             // 
             this.MaKH.Location = new System.Drawing.Point(151, 88);
             this.MaKH.Name = "MaKH";
+            this.MaKH.ReadOnly = true;
             this.MaKH.Size = new System.Drawing.Size(244, 22);
             this.MaKH.TabIndex = 5;
             // 
@@ -139,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 418);
+            this.ClientSize = new System.Drawing.Size(457, 390);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.Xacnhan);
             this.Controls.Add(this.SDTKH);

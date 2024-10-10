@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.QLNV = new System.Windows.Forms.Button();
             this.QLKH = new System.Windows.Forms.Button();
             this.QLHDB = new System.Windows.Forms.Button();
             this.QLHDN = new System.Windows.Forms.Button();
             this.QLNCC = new System.Windows.Forms.Button();
             this.QLDMHH = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // QLNV
@@ -99,13 +98,6 @@
             this.QLDMHH.UseVisualStyleBackColor = true;
             this.QLDMHH.Click += new System.EventHandler(this.QLDMHH_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            this.contextMenuStrip1.Text = "Quản lý bán kính ";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -116,11 +108,22 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Quản lý bán kính";
             // 
+            // exit
+            // 
+            this.exit.Location = new System.Drawing.Point(472, 366);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(167, 73);
+            this.exit.TabIndex = 9;
+            this.exit.Text = "Thoát";
+            this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 561);
+            this.Controls.Add(this.exit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.QLDMHH);
             this.Controls.Add(this.QLNCC);
@@ -143,7 +146,7 @@
         private System.Windows.Forms.Button QLHDN;
         private System.Windows.Forms.Button QLNCC;
         private System.Windows.Forms.Button QLDMHH;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button exit;
     }
 }

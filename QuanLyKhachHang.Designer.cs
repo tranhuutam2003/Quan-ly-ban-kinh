@@ -42,9 +42,11 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 105);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(684, 441);
+            this.dataGridView1.Size = new System.Drawing.Size(581, 397);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -84,6 +86,7 @@
             this.xoaKH.TabIndex = 5;
             this.xoaKH.Text = "Xóa khách hàng";
             this.xoaKH.UseVisualStyleBackColor = true;
+            this.xoaKH.Click += new System.EventHandler(this.xoaKH_Click);
             // 
             // exit
             // 
@@ -93,6 +96,7 @@
             this.exit.TabIndex = 6;
             this.exit.Text = "Trở lại";
             this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // label2
             // 
