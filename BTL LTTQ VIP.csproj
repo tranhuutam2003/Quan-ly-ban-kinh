@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHoaDonBan.Designer.cs">
+      <DependentUpon>ChiTietHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHoaDonNhap.Designer.cs">
+      <DependentUpon>ChiTietHoaDonNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyDanhMucHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,12 +102,33 @@
     <Compile Include="SuaNV.Designer.cs">
       <DependentUpon>SuaNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHoaDonBan.Designer.cs">
+      <DependentUpon>ThemHoaDonBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemNV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThemNV.Designer.cs">
       <DependentUpon>ThemNV.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChiTietHoaDonBan.resx">
+      <DependentUpon>ChiTietHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietHoaDonNhap.resx">
+      <DependentUpon>ChiTietHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyHoaDonBan.resx">
+      <DependentUpon>QuanLyHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyHoaDonNhap.resx">
+      <DependentUpon>QuanLyHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNhaCungCap.resx">
+      <DependentUpon>QuanLyNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="SuaNV.resx">
       <DependentUpon>SuaNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemHoaDonBan.resx">
+      <DependentUpon>ThemHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemNV.resx">
       <DependentUpon>ThemNV.cs</DependentUpon>

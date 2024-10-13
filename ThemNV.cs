@@ -8,7 +8,7 @@ namespace BTL_LTTQ_VIP
 {
     public partial class ThemNV : Form
     {
-        private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
+        private string connectionString = "Data Source=THUCVIVO;Initial Catalog=quanlybankinh;Integrated Security=True";
         public ThemNV()
         {
             InitializeComponent();
@@ -122,5 +122,9 @@ namespace BTL_LTTQ_VIP
             }
         }
 
-    }
+		private void ThemNV_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

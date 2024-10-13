@@ -96,6 +96,7 @@
             this.CongViec.Name = "CongViec";
             this.CongViec.Size = new System.Drawing.Size(244, 24);
             this.CongViec.TabIndex = 24;
+            this.CongViec.SelectedIndexChanged += new System.EventHandler(this.CongViec_SelectedIndexChanged);
             // 
             // label1
             // 

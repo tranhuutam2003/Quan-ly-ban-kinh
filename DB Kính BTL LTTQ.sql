@@ -308,3 +308,7 @@ INSERT INTO ChiTietHoaDonNhap (SoHDN, MaHang, SoLuong, DonGia, GiamGia, ThanhTie
 (3, 3, 75, 1500000, 0, 112500000),
 (4, 4, 200, 800000, 0, 160000000),
 (5, 5, 80, 1200000, 0, 96000000);
+
+
+--test
+SELECT * from ChiTietHoaDonBan

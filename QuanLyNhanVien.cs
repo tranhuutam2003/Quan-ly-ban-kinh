@@ -7,7 +7,7 @@ namespace BTL_LTTQ_VIP
 {
     public partial class QuanLyNhanVien : Form
     {
-        private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
+        private string connectionString = "Data Source=THUCVIVO;Initial Catalog=quanlybankinh;Integrated Security=True";
 
         public QuanLyNhanVien()
         {
@@ -91,5 +91,10 @@ namespace BTL_LTTQ_VIP
         {
 
         }
-    }
+
+		private void QuanLyNhanVien_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

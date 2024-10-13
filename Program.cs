@@ -6,7 +6,12 @@ using System.Windows.Forms;
 
 namespace BTL_LTTQ_VIP
 {
-    internal static class Program
+	public static class databaselink
+	{
+		public static string ConnectionString = "Data Source=THUCVIVO;Initial Catalog=quanlybankinh;Integrated Security=True";
+	}
+
+	internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -16,7 +21,7 @@ namespace BTL_LTTQ_VIP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyNhanVien());
+            Application.Run(new QuanLyHoaDonBan());
         }
     }
 }
