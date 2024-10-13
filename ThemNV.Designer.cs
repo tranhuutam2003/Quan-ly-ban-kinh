@@ -184,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 400);
+            this.ClientSize = new System.Drawing.Size(381, 371);
             this.Controls.Add(this.Xacnhan);
             this.Controls.Add(this.Sex);
             this.Controls.Add(this.CongViec);
@@ -202,7 +202,7 @@
             this.Controls.Add(this.tenNV);
             this.Controls.Add(this.MaNV);
             this.Name = "ThemNV";
-            this.Text = "ThongTinNV";
+            this.Text = "Thêm nhân viên";
             this.ResumeLayout(false);
             this.PerformLayout();
 

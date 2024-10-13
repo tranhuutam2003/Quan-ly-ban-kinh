@@ -12,45 +12,52 @@ namespace BTL_LTTQ_VIP
 {
     public partial class Home : Form
     {
+        public string TenNV { get; set; }
+        public string CongViec { get; set; }
         public Home()
         {
             InitializeComponent();
-            this.BackgroundImage = Image.FromFile(@"C:\Users\tam tran\source\repos\BTL LTTQ VIP\imglttq\backroundhome.jpg");
-            this.BackgroundImageLayout = ImageLayout.Stretch; // Để hình ảnh giãn theo kích thước form
+            this.Load += Home_Load;
+            MenuNV.Visible = false; 
+            MenuQL.Visible = false;
+
+            //this.BackgroundImage = Image.FromFile(@"C:\Users\tam tran\source\repos\BTL LTTQ VIP\imglttq\backroundhome.jpg");
+            //this.BackgroundImageLayout = ImageLayout.Stretch; // Để hình ảnh giãn theo kích thước form
         }
 
         private void QLNV_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien qlnv = new QuanLyNhanVien();
+            QuanLyNhanVien qlnv = new QuanLyNhanVien(TenNV, CongViec);
             qlnv.Show();
             this.Hide();
+
         }
 
         private void QLNCC_Click(object sender, EventArgs e)
         {
             QuanLyNhaCungCap qlncc = new QuanLyNhaCungCap();
             qlncc.Show();
-            this.Hide();
+            
         }
 
         private void QLKH_Click(object sender, EventArgs e)
         {
             QuanLyKhachHang qlkh = new QuanLyKhachHang();
             qlkh.Show();
-            this.Hide();
+            
         }
 
         private void QLHDN_Click(object sender, EventArgs e)
         {
             QuanLyHoaDonNhap qlhdn = new QuanLyHoaDonNhap();
             qlhdn.Show();
-            this.Hide();
+            
         }
 
         private void QLDMHH_Click(object sender, EventArgs e)
         {
-            QuanLyDanhMucHangHoa qldmhh = new QuanLyDanhMucHangHoa();
-            qldmhh.Show();
+            QuanLyDanhMucHangHoa qlhh = new QuanLyDanhMucHangHoa(TenNV, CongViec);
+            qlhh.Show();
             this.Hide();
         }
 
@@ -58,7 +65,7 @@ namespace BTL_LTTQ_VIP
         {
             QuanLyHoaDonBan qlhdb = new QuanLyHoaDonBan();
             qlhdb.Show();
-            this.Hide();
+            
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -68,7 +75,70 @@ namespace BTL_LTTQ_VIP
 
         private void exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Account account = new Account();
+            account.Show();
+            this.Close();
+        }
+
+        private void Home_Load()
+        {
+            
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            UpdateUI();
+        }
+
+        public void UpdateUI()
+        {
+                lbTenNV.Text = TenNV ?? "Không có tên";
+                lbCV.Text = CongViec ?? "Không có công việc";
+
+            if (CongViec == "Nhân viên bán hàng")
+            {
+                MenuNV.Visible = true;  // Show sales staff menu
+                MenuQL.Visible = false; // Hide manager menu
+            }
+            else if (CongViec == "Quản lý")
+            {
+                MenuNV.Visible = false; // Hide sales staff menu
+                MenuQL.Visible = true;  // Show manager menu
+            }
+            
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ThemHangHoa themHangHoa = new ThemHangHoa();
+            themHangHoa.Show();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            QuanLyDanhMucHangHoa qlhh = new QuanLyDanhMucHangHoa(TenNV, CongViec);
+            qlhh.Show();
+            this.Hide();
         }
     }
 }

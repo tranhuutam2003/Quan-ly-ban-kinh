@@ -14,9 +14,19 @@ namespace BTL_LTTQ_VIP
     public partial class QuanLyDanhMucHangHoa : Form
     {
         private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
+        private string TenNV;
+        private string CongViec;
         public QuanLyDanhMucHangHoa()
         {
             InitializeComponent();
+            loadData();
+        }
+
+        public QuanLyDanhMucHangHoa(string tenNV, string congViec)
+        {
+            InitializeComponent();
+            TenNV = tenNV;   // Set user information
+            CongViec = congViec;
             loadData();
         }
 
@@ -104,6 +114,17 @@ namespace BTL_LTTQ_VIP
         private void Sua_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Home homeForm = new Home
+            {
+                TenNV = TenNV,
+                CongViec = CongViec
+            };
+            homeForm.Show();
+            this.Close();
         }
     }
 }

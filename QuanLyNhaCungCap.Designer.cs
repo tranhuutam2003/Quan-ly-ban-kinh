@@ -33,8 +33,8 @@
             this.SuaNCC = new System.Windows.Forms.Button();
             this.XoaNCC = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(705, 461);
+            this.dataGridView1.Size = new System.Drawing.Size(705, 348);
             this.dataGridView1.TabIndex = 0;
             // 
             // ThemNCC
@@ -86,15 +86,6 @@
             this.exit.Text = "Trở lại";
             this.exit.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Thôn tin nhà cung cấp";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -104,6 +95,15 @@
             this.label2.Size = new System.Drawing.Size(493, 71);
             this.label2.TabIndex = 7;
             this.label2.Text = "Quản lý nhà cung cấp";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Thôn tin nhà cung cấp";
             // 
             // QuanLyNhaCungCap
             // 
@@ -132,7 +132,7 @@
         private System.Windows.Forms.Button SuaNCC;
         private System.Windows.Forms.Button XoaNCC;
         private System.Windows.Forms.Button exit;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -8,10 +8,19 @@ namespace BTL_LTTQ_VIP
     public partial class QuanLyNhanVien : Form
     {
         private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
-
+        public string TenNV { get; set; }
+        public string CongViec { get; set; }
         public QuanLyNhanVien()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        public QuanLyNhanVien(string tenNV, string congViec)
+        {
+            InitializeComponent();
+            TenNV = tenNV;   // Set user information
+            CongViec = congViec;
             LoadData();
         }
 
@@ -127,8 +136,12 @@ namespace BTL_LTTQ_VIP
 
         private void exitNV_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien qlnv = new QuanLyNhanVien();
-            qlnv.Show();
+            Home homeForm = new Home
+            {
+                TenNV = TenNV,
+                CongViec = CongViec
+            };
+            homeForm.Show();
             this.Close();
         }
     }

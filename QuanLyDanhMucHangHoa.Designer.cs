@@ -34,8 +34,9 @@
             this.Sua = new System.Windows.Forms.Button();
             this.Xoa = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +52,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 146);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(776, 400);
@@ -94,31 +95,33 @@
             this.Exit.TabIndex = 5;
             this.Exit.Text = "Trở lại";
             this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // label3
+            // groupBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 127);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Thông tin hàng hóa";
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 83);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(789, 438);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin hàng hóa";
             // 
             // QuanLyDanhMucHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 571);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Xoa);
             this.Controls.Add(this.Sua);
             this.Controls.Add(this.Them);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "QuanLyDanhMucHangHoa";
             this.Text = "QuanLyDanhMucHangHoa";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,6 +135,6 @@
         private System.Windows.Forms.Button Sua;
         private System.Windows.Forms.Button Xoa;
         private System.Windows.Forms.Button Exit;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
