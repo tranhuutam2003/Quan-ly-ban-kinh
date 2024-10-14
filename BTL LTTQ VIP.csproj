@@ -47,34 +47,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietHoaDonBan.cs">
-    <SubType>Form</SubType>
-  </Compile>
-  <Compile Include="ChiTietHoaDonBan.Designer.cs">
-    <DependentUpon>ChiTietHoaDonBan.cs</DependentUpon>
-  </Compile>
-  <Compile Include="ChiTietHoaDonNhap.cs">
-    <SubType>Form</SubType>
-  </Compile>
-  <Compile Include="ChiTietHoaDonNhap.Designer.cs">
-    <DependentUpon>ChiTietHoaDonNhap.cs</DependentUpon>
-  </Compile>
-   <Compile Include="Account.cs">
-   <SubType>Form</SubType>
- </Compile>
- <Compile Include="Account.Designer.cs">
-   <DependentUpon>Account.cs</DependentUpon>
- </Compile>
- <Compile Include="Home.cs">
-   <SubType>Form</SubType>
- </Compile>
- <Compile Include="Home.Designer.cs">
-   <DependentUpon>Home.cs</DependentUpon>
- </Compile>
- <Compile Include="Properties\Resources.Designer.cs">
-   <AutoGen>True</AutoGen>
-   <DesignTime>True</DesignTime>
-   <DependentUpon>Resources.resx</DependentUpon>
- </Compile>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHoaDonBan.Designer.cs">
+      <DependentUpon>ChiTietHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietHoaDonNhap.Designer.cs">
+      <DependentUpon>ChiTietHoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyDanhMucHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,12 +137,90 @@
     <Compile Include="SuaNV.Designer.cs">
       <DependentUpon>SuaNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemChatLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemChatLieu.Designer.cs">
+      <DependentUpon>ThemChatLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemCongDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemCongDung.Designer.cs">
+      <DependentUpon>ThemCongDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemDacDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemDacDiem.Designer.cs">
+      <DependentUpon>ThemDacDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemDiop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemDiop.Designer.cs">
+      <DependentUpon>ThemDiop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemGongMat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemGongMat.Designer.cs">
+      <DependentUpon>ThemGongMat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHangHoa.Designer.cs">
+      <DependentUpon>ThemHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemHinhDangMat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHinhDangMat.Designer.cs">
+      <DependentUpon>ThemHinhDangMat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHoaDonBan.Designer.cs">
+      <DependentUpon>ThemHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemKH.Designer.cs">
+      <DependentUpon>ThemKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemLoaiKinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemLoaiKinh.Designer.cs">
+      <DependentUpon>ThemLoaiKinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemMauSac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemMauSac.Designer.cs">
+      <DependentUpon>ThemMauSac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemNuocSanXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemNuocSanXuat.Designer.cs">
+      <DependentUpon>ThemNuocSanXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemNV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThemNV.Designer.cs">
       <DependentUpon>ThemNV.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +237,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SuaNV.resx">
       <DependentUpon>SuaNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemChatLieu.resx">
+      <DependentUpon>ThemChatLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemCongDung.resx">
+      <DependentUpon>ThemCongDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemDacDiem.resx">
+      <DependentUpon>ThemDacDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemDiop.resx">
+      <DependentUpon>ThemDiop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemGongMat.resx">
+      <DependentUpon>ThemGongMat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemHangHoa.resx">
+      <DependentUpon>ThemHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemHinhDangMat.resx">
+      <DependentUpon>ThemHinhDangMat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemHoaDonBan.resx">
+      <DependentUpon>ThemHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemKH.resx">
+      <DependentUpon>ThemKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemLoaiKinh.resx">
+      <DependentUpon>ThemLoaiKinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemMauSac.resx">
+      <DependentUpon>ThemMauSac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemNuocSanXuat.resx">
+      <DependentUpon>ThemNuocSanXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemNV.resx">
       <DependentUpon>ThemNV.cs</DependentUpon>

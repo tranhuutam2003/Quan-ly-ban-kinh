@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BTL_LTTQ_VIP
 {
     public partial class QuanLyHoaDonBan : Form
     {
-        string connectionString = "Data Source=THUCVIVO;Initial Catalog=quanlybankinh;Integrated Security=True";
 
 		public QuanLyHoaDonBan()
         {
@@ -22,7 +22,7 @@ namespace BTL_LTTQ_VIP
         }
 		private void LoadData()
 		{
-			using (SqlConnection connection = new SqlConnection(connectionString))
+			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
 			{
 				try
 				{

@@ -14,7 +14,6 @@ namespace BTL_LTTQ_VIP
 {
     public partial class SuaKH : Form
     {
-        private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
         private string maKH;
         public SuaKH()
         {
@@ -48,7 +47,7 @@ namespace BTL_LTTQ_VIP
             //    return;
             //}
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {

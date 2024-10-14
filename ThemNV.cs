@@ -8,7 +8,6 @@ namespace BTL_LTTQ_VIP
 {
     public partial class ThemNV : Form
     {
-        private string connectionString = "Data Source=THUCVIVO;Initial Catalog=quanlybankinh;Integrated Security=True";
         public ThemNV()
         {
             InitializeComponent();
@@ -19,7 +18,7 @@ namespace BTL_LTTQ_VIP
         // Hàm load danh sách công việc từ bảng CongViec vào ComboBox
         private void LoadCongViec()
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {
@@ -92,7 +91,7 @@ namespace BTL_LTTQ_VIP
             // Lấy giới tính từ ComboBox
             string gioiTinh = Sex.SelectedItem.ToString();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {

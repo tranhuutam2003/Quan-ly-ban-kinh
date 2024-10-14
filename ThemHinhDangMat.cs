@@ -13,7 +13,7 @@ namespace BTL_LTTQ_VIP
 {
     public partial class ThemHinhDangMat : Form
     {
-        private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
+        //private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
         public ThemHinhDangMat()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace BTL_LTTQ_VIP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {

@@ -14,7 +14,6 @@ namespace BTL_LTTQ_VIP
 {
     public partial class ThemKH : Form
     {
-        private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
         public ThemKH()
         {
             InitializeComponent();
@@ -27,7 +26,7 @@ namespace BTL_LTTQ_VIP
                 MessageBox.Show("Số điện thoại phải có 10 số và bắt đầu bằng số 0.");
                 return;
             }
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {

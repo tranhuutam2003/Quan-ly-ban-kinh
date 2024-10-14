@@ -13,7 +13,6 @@ namespace BTL_LTTQ_VIP
 {
     public partial class Account : Form
     {
-        private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
         public Account()
         {
             InitializeComponent();
@@ -81,7 +80,7 @@ namespace BTL_LTTQ_VIP
         private string GetUserRole(string maNV)
         {
             // Thực hiện truy vấn để lấy công việc của nhân viên từ database
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
             {
                 conn.Open();
                 string query = "SELECT MaCV FROM NhanVien WHERE MaNV = @MaNV";
@@ -94,7 +93,7 @@ namespace BTL_LTTQ_VIP
         }
         private (bool isAuthenticated, string tenNV, string tenCV) AuthenticateUser(string userInput, string password)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
             {
                 conn.Open();
                 string query = @"SELECT nv.TenNV, cv.TenCV 

@@ -21,7 +21,7 @@ namespace BTL_LTTQ_VIP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyNhanVien());
+            Application.Run(new Account());
         }
     }
 }

@@ -14,7 +14,6 @@ namespace BTL_LTTQ_VIP
 {
     public partial class SuaNV : Form
     {
-        private string connectionString = "Data Source=THUCVIVO;Initial Catalog=quanlybankinh;Integrated Security=True";
         private string maNV;
         public SuaNV()
         {
@@ -40,7 +39,7 @@ namespace BTL_LTTQ_VIP
 
         private void LoadCongViec(string maCV)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {

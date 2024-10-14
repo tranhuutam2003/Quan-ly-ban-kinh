@@ -14,7 +14,6 @@ namespace BTL_LTTQ_VIP
 {
     public partial class QuanLyNhaCungCap : Form
     {
-        string connectionString = "Data Source=THUCVIVO;Initial Catalog=quanlybankinh;Integrated Security=True";
         //SqlConnection con;
         //SqlCommand cmd;
         //SqlDataAdapter adt;
@@ -26,7 +25,7 @@ namespace BTL_LTTQ_VIP
         }
         private void LoadData()
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {

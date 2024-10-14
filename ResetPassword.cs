@@ -15,7 +15,6 @@ namespace BTL_LTTQ_VIP
 {
     public partial class ResetPassword : Form
     {
-        private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
         private string verificationCode;
         private string email;
         public ResetPassword()
@@ -100,7 +99,7 @@ namespace BTL_LTTQ_VIP
         private void UpdatePassword(string email, string newPassword)
         {
             // Directly use the newPassword without hashing
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {

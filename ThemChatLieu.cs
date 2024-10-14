@@ -13,7 +13,6 @@ namespace BTL_LTTQ_VIP
 {
     public partial class ThemChatLieu : Form
     {
-        private string connectionString = "Data Source=LAPTOP-7NSHMMSK;Initial Catalog=quanlybankinh;Integrated Security=True";
         public ThemChatLieu()
         {
             InitializeComponent();
@@ -26,7 +25,7 @@ namespace BTL_LTTQ_VIP
 
         private void xacnhan_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {
