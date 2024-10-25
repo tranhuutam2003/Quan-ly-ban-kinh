@@ -26,7 +26,11 @@ namespace BTL_LTTQ_VIP
 				try
 				{
 					connection.Open();
-					string query = "SELECT * from ChiTietHoaDonBan";
+					//string query = "SELECT * from ChiTietHoaDonBan";
+					string query = @"SELECT hdb.SoHDB, hdb.MaNV, hdb.NgayBan, hdb.MaKhach, 
+                                    cthdb.MaHang, cthdb.SoLuong, cthdb.GiamGia, cthdb.ThanhTien
+                                FROM HoaDonBan hdb
+                                INNER JOIN ChiTietHoaDonBan cthdb ON hdb.SoHDB = cthdb.SoHDB";
 					SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
 					DataTable dataTable = new DataTable();
 					dataAdapter.Fill(dataTable);
@@ -42,9 +46,6 @@ namespace BTL_LTTQ_VIP
 
 		private void Quaylai_Click(object sender, EventArgs e)
 		{
-			//QuanLyNhanVien quanLyNV = new QuanLyNhanVien();
-			//quanLyNV.Show();
-			//this.Close();
 
 			QuanLyHoaDonBan quanLyHoaDonBan = new QuanLyHoaDonBan();
 			quanLyHoaDonBan.StartPosition = FormStartPosition.Manual;
@@ -70,5 +71,13 @@ namespace BTL_LTTQ_VIP
 			//	e.FormattingApplied = true;
 			//}
 		}
+
+		private void exit_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+
+		
 	}
 }

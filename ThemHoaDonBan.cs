@@ -59,7 +59,7 @@ namespace BTL_LTTQ_VIP
 			}
 			else
 			{
-				textBox5.Text = tongTien;  // Trong trường hợp không chuyển đổi được, hiển thị như cũ
+				textBox5.Text = tongTien;  
 			}
 			editSoHDB = soHDB;
 			this.Text = "Sửa Hóa Đơn Bán";

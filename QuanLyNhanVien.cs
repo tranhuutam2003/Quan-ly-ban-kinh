@@ -96,7 +96,7 @@ namespace BTL_LTTQ_VIP
 
                 if (result == DialogResult.Yes)
                 {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
                     {
                         try
                         {
