@@ -147,5 +147,12 @@ namespace BTL_LTTQ_VIP
             quanLyHoaDonBan.Show();
 
 		}
+
+		private void button8_Click(object sender, EventArgs e)
+		{
+            QuanLyHoaDonNhap quanLyHoaDonNhap= new QuanLyHoaDonNhap();
+            quanLyHoaDonNhap.Show();
+            this.Hide();
+		}
 	}
 }

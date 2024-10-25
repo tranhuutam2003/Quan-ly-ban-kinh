@@ -30,7 +30,6 @@
 		{
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.btnThemHD = new System.Windows.Forms.Button();
-			this.btnSuaHD = new System.Windows.Forms.Button();
 			this.btnXoaHD = new System.Windows.Forms.Button();
 			this.exit = new System.Windows.Forms.Button();
 			this.btnXemChiTiet = new System.Windows.Forms.Button();
@@ -48,6 +47,7 @@
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(973, 375);
 			this.dataGridView1.TabIndex = 0;
+			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
 			this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
 			// 
 			// btnThemHD
@@ -60,16 +60,6 @@
 			this.btnThemHD.UseVisualStyleBackColor = true;
 			this.btnThemHD.Click += new System.EventHandler(this.btnThemHD_Click);
 			// 
-			// btnSuaHD
-			// 
-			this.btnSuaHD.Location = new System.Drawing.Point(304, 477);
-			this.btnSuaHD.Name = "btnSuaHD";
-			this.btnSuaHD.Size = new System.Drawing.Size(156, 49);
-			this.btnSuaHD.TabIndex = 2;
-			this.btnSuaHD.Text = "Sửa Hóa Đơn";
-			this.btnSuaHD.UseVisualStyleBackColor = true;
-			this.btnSuaHD.Click += new System.EventHandler(this.btnSuaHD_Click);
-			// 
 			// btnXoaHD
 			// 
 			this.btnXoaHD.Location = new System.Drawing.Point(545, 477);
@@ -78,6 +68,7 @@
 			this.btnXoaHD.TabIndex = 3;
 			this.btnXoaHD.Text = "Xóa Hóa Đơn";
 			this.btnXoaHD.UseVisualStyleBackColor = true;
+			this.btnXoaHD.Click += new System.EventHandler(this.btnXoaHD_Click);
 			// 
 			// exit
 			// 
@@ -91,7 +82,7 @@
 			// 
 			// btnXemChiTiet
 			// 
-			this.btnXemChiTiet.Location = new System.Drawing.Point(425, 559);
+			this.btnXemChiTiet.Location = new System.Drawing.Point(309, 477);
 			this.btnXemChiTiet.Name = "btnXemChiTiet";
 			this.btnXemChiTiet.Size = new System.Drawing.Size(156, 49);
 			this.btnXemChiTiet.TabIndex = 5;
@@ -107,11 +98,11 @@
 			this.Controls.Add(this.btnXemChiTiet);
 			this.Controls.Add(this.exit);
 			this.Controls.Add(this.btnXoaHD);
-			this.Controls.Add(this.btnSuaHD);
 			this.Controls.Add(this.btnThemHD);
 			this.Controls.Add(this.dataGridView1);
 			this.Name = "QuanLyHoaDonBan";
 			this.Text = "QuanLyHoaDonBan";
+			this.Load += new System.EventHandler(this.QuanLyHoaDonBan_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
@@ -121,7 +112,6 @@
 
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Button btnThemHD;
-		private System.Windows.Forms.Button btnSuaHD;
 		private System.Windows.Forms.Button btnXoaHD;
 		private System.Windows.Forms.Button exit;
 		private System.Windows.Forms.Button btnXemChiTiet;

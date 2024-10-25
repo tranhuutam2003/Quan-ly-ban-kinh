@@ -109,7 +109,7 @@ namespace BTL_LTTQ_VIP
             string gioiTinh = Sex.SelectedItem.ToString();
             int maCongViec = (int)((dynamic)CongViec.SelectedItem).MaCV;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
                 try
                 {

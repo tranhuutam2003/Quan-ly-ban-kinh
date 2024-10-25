@@ -137,7 +137,7 @@
 			this.QLNV.Location = new System.Drawing.Point(3, 197);
 			this.QLNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.QLNV.Name = "QLNV";
-			this.QLNV.Size = new System.Drawing.Size(150, 35);
+			this.QLNV.Size = new System.Drawing.Size(167, 35);
 			this.QLNV.TabIndex = 0;
 			this.QLNV.Text = "Quản lý nhân viên";
 			this.QLNV.UseVisualStyleBackColor = true;
@@ -208,7 +208,7 @@
 			this.flowLayoutPanel1.Controls.Add(this.QLNV);
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 19);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(155, 234);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 234);
 			this.flowLayoutPanel1.TabIndex = 12;
 			// 
 			// panel1
@@ -257,7 +257,7 @@
 			this.flowLayoutPanel4.Controls.Add(this.button12);
 			this.flowLayoutPanel4.Location = new System.Drawing.Point(14, 19);
 			this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-			this.flowLayoutPanel4.Size = new System.Drawing.Size(155, 195);
+			this.flowLayoutPanel4.Size = new System.Drawing.Size(170, 195);
 			this.flowLayoutPanel4.TabIndex = 12;
 			// 
 			// button8
@@ -265,17 +265,18 @@
 			this.button8.Location = new System.Drawing.Point(3, 2);
 			this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button8.Name = "button8";
-			this.button8.Size = new System.Drawing.Size(150, 35);
+			this.button8.Size = new System.Drawing.Size(167, 35);
 			this.button8.TabIndex = 3;
 			this.button8.Text = "Quản lý hóa đơn nhập";
 			this.button8.UseVisualStyleBackColor = true;
+			this.button8.Click += new System.EventHandler(this.button8_Click);
 			// 
 			// button9
 			// 
 			this.button9.Location = new System.Drawing.Point(3, 41);
 			this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button9.Name = "button9";
-			this.button9.Size = new System.Drawing.Size(150, 35);
+			this.button9.Size = new System.Drawing.Size(167, 35);
 			this.button9.TabIndex = 5;
 			this.button9.Text = "Quản lý hàng hóa";
 			this.button9.UseVisualStyleBackColor = true;
@@ -286,7 +287,7 @@
 			this.button10.Location = new System.Drawing.Point(3, 80);
 			this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button10.Name = "button10";
-			this.button10.Size = new System.Drawing.Size(150, 35);
+			this.button10.Size = new System.Drawing.Size(167, 35);
 			this.button10.TabIndex = 4;
 			this.button10.Text = "Quản lý nhà cung cấp";
 			this.button10.UseVisualStyleBackColor = true;
@@ -296,7 +297,7 @@
 			this.button11.Location = new System.Drawing.Point(3, 119);
 			this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button11.Name = "button11";
-			this.button11.Size = new System.Drawing.Size(150, 35);
+			this.button11.Size = new System.Drawing.Size(167, 35);
 			this.button11.TabIndex = 1;
 			this.button11.Text = "Quản lý khách hàng";
 			this.button11.UseVisualStyleBackColor = true;
@@ -306,7 +307,7 @@
 			this.button12.Location = new System.Drawing.Point(3, 158);
 			this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button12.Name = "button12";
-			this.button12.Size = new System.Drawing.Size(150, 35);
+			this.button12.Size = new System.Drawing.Size(167, 35);
 			this.button12.TabIndex = 2;
 			this.button12.Text = "Quản lý hóa đơn bán";
 			this.button12.UseVisualStyleBackColor = true;
@@ -314,9 +315,9 @@
 			// 
 			// groupBox4
 			// 
-			this.groupBox4.Location = new System.Drawing.Point(196, 204);
+			this.groupBox4.Location = new System.Drawing.Point(233, 204);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(623, 336);
+			this.groupBox4.Size = new System.Drawing.Size(586, 336);
 			this.groupBox4.TabIndex = 19;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Thông báo";
