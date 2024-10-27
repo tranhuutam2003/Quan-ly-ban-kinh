@@ -1,33 +1,33 @@
 ﻿namespace BTL_LTTQ_VIP
 {
-    partial class Home
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class Home
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.label1 = new System.Windows.Forms.Label();
 			this.plTenNV = new System.Windows.Forms.Panel();
 			this.lbTenNV = new System.Windows.Forms.Label();
@@ -42,13 +42,6 @@
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.MenuNV = new System.Windows.Forms.GroupBox();
-			this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-			this.button8 = new System.Windows.Forms.Button();
-			this.button9 = new System.Windows.Forms.Button();
-			this.button10 = new System.Windows.Forms.Button();
-			this.button11 = new System.Windows.Forms.Button();
-			this.button12 = new System.Windows.Forms.Button();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -64,15 +57,13 @@
 			this.button5 = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.button7 = new System.Windows.Forms.Button();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.plTenNV.SuspendLayout();
 			this.plCV.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
-			this.MenuNV.SuspendLayout();
-			this.flowLayoutPanel4.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.flowLayoutPanel2.SuspendLayout();
 			this.MenuQL.SuspendLayout();
@@ -137,7 +128,7 @@
 			this.QLNV.Location = new System.Drawing.Point(3, 197);
 			this.QLNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.QLNV.Name = "QLNV";
-			this.QLNV.Size = new System.Drawing.Size(167, 35);
+			this.QLNV.Size = new System.Drawing.Size(150, 35);
 			this.QLNV.TabIndex = 0;
 			this.QLNV.Text = "Quản lý nhân viên";
 			this.QLNV.UseVisualStyleBackColor = true;
@@ -206,9 +197,9 @@
 			this.flowLayoutPanel1.Controls.Add(this.QLKH);
 			this.flowLayoutPanel1.Controls.Add(this.QLHDB);
 			this.flowLayoutPanel1.Controls.Add(this.QLNV);
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 19);
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 25);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(185, 234);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 234);
 			this.flowLayoutPanel1.TabIndex = 12;
 			// 
 			// panel1
@@ -225,7 +216,6 @@
 			// panel2
 			// 
 			this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.panel2.Controls.Add(this.MenuNV);
 			this.panel2.Controls.Add(this.groupBox4);
 			this.panel2.Controls.Add(this.groupBox3);
 			this.panel2.Controls.Add(this.MenuQL);
@@ -237,81 +227,6 @@
 			this.panel2.Size = new System.Drawing.Size(1101, 545);
 			this.panel2.TabIndex = 14;
 			this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-			// 
-			// MenuNV
-			// 
-			this.MenuNV.Controls.Add(this.flowLayoutPanel4);
-			this.MenuNV.Location = new System.Drawing.Point(6, 85);
-			this.MenuNV.Name = "MenuNV";
-			this.MenuNV.Size = new System.Drawing.Size(184, 214);
-			this.MenuNV.TabIndex = 18;
-			this.MenuNV.TabStop = false;
-			this.MenuNV.Text = "Menu";
-			// 
-			// flowLayoutPanel4
-			// 
-			this.flowLayoutPanel4.Controls.Add(this.button8);
-			this.flowLayoutPanel4.Controls.Add(this.button9);
-			this.flowLayoutPanel4.Controls.Add(this.button10);
-			this.flowLayoutPanel4.Controls.Add(this.button11);
-			this.flowLayoutPanel4.Controls.Add(this.button12);
-			this.flowLayoutPanel4.Location = new System.Drawing.Point(14, 19);
-			this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-			this.flowLayoutPanel4.Size = new System.Drawing.Size(170, 195);
-			this.flowLayoutPanel4.TabIndex = 12;
-			// 
-			// button8
-			// 
-			this.button8.Location = new System.Drawing.Point(3, 2);
-			this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.button8.Name = "button8";
-			this.button8.Size = new System.Drawing.Size(167, 35);
-			this.button8.TabIndex = 3;
-			this.button8.Text = "Quản lý hóa đơn nhập";
-			this.button8.UseVisualStyleBackColor = true;
-			this.button8.Click += new System.EventHandler(this.button8_Click);
-			// 
-			// button9
-			// 
-			this.button9.Location = new System.Drawing.Point(3, 41);
-			this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.button9.Name = "button9";
-			this.button9.Size = new System.Drawing.Size(167, 35);
-			this.button9.TabIndex = 5;
-			this.button9.Text = "Quản lý hàng hóa";
-			this.button9.UseVisualStyleBackColor = true;
-			this.button9.Click += new System.EventHandler(this.button9_Click);
-			// 
-			// button10
-			// 
-			this.button10.Location = new System.Drawing.Point(3, 80);
-			this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.button10.Name = "button10";
-			this.button10.Size = new System.Drawing.Size(167, 35);
-			this.button10.TabIndex = 4;
-			this.button10.Text = "Quản lý nhà cung cấp";
-			this.button10.UseVisualStyleBackColor = true;
-			// 
-			// button11
-			// 
-			this.button11.Location = new System.Drawing.Point(3, 119);
-			this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.button11.Name = "button11";
-			this.button11.Size = new System.Drawing.Size(167, 35);
-			this.button11.TabIndex = 1;
-			this.button11.Text = "Quản lý khách hàng";
-			this.button11.UseVisualStyleBackColor = true;
-			// 
-			// button12
-			// 
-			this.button12.Location = new System.Drawing.Point(3, 158);
-			this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.button12.Name = "button12";
-			this.button12.Size = new System.Drawing.Size(167, 35);
-			this.button12.TabIndex = 2;
-			this.button12.Text = "Quản lý hóa đơn bán";
-			this.button12.UseVisualStyleBackColor = true;
-			this.button12.Click += new System.EventHandler(this.button12_Click);
 			// 
 			// groupBox4
 			// 
@@ -365,9 +280,9 @@
 			// MenuQL
 			// 
 			this.MenuQL.Controls.Add(this.flowLayoutPanel1);
-			this.MenuQL.Location = new System.Drawing.Point(6, 88);
+			this.MenuQL.Location = new System.Drawing.Point(7, 88);
 			this.MenuQL.Name = "MenuQL";
-			this.MenuQL.Size = new System.Drawing.Size(184, 253);
+			this.MenuQL.Size = new System.Drawing.Size(170, 265);
 			this.MenuQL.TabIndex = 17;
 			this.MenuQL.TabStop = false;
 			this.MenuQL.Text = "Menu";
@@ -467,6 +382,10 @@
 			this.button7.Text = "Tìm khách hàng";
 			this.button7.UseVisualStyleBackColor = true;
 			// 
+			// backgroundWorker1
+			// 
+			this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = global::BTL_LTTQ_VIP.Properties.Resources.bookshelf_413705_640;
@@ -477,10 +396,6 @@
 			this.pictureBox1.TabIndex = 15;
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-			// 
-			// backgroundWorker1
-			// 
-			this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
 			// 
 			// Home
 			// 
@@ -499,8 +414,6 @@
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
-			this.MenuNV.ResumeLayout(false);
-			this.flowLayoutPanel4.ResumeLayout(false);
 			this.groupBox3.ResumeLayout(false);
 			this.flowLayoutPanel2.ResumeLayout(false);
 			this.MenuQL.ResumeLayout(false);
@@ -509,46 +422,39 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel plTenNV;
-        private System.Windows.Forms.Panel plCV;
-        private System.Windows.Forms.Label lbTenNV;
-        private System.Windows.Forms.Label lbCV;
-        private System.Windows.Forms.Button QLNV;
-        private System.Windows.Forms.Button QLKH;
-        private System.Windows.Forms.Button QLHDB;
-        private System.Windows.Forms.Button QLHDN;
-        private System.Windows.Forms.Button QLNCC;
-        private System.Windows.Forms.Button QLDMHH;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button exit;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button rspass;
-        private System.Windows.Forms.GroupBox MenuQL;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.GroupBox MenuNV;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-    }
+		#endregion
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Panel plTenNV;
+		private System.Windows.Forms.Panel plCV;
+		private System.Windows.Forms.Label lbTenNV;
+		private System.Windows.Forms.Label lbCV;
+		private System.Windows.Forms.Button QLNV;
+		private System.Windows.Forms.Button QLKH;
+		private System.Windows.Forms.Button QLHDB;
+		private System.Windows.Forms.Button QLHDN;
+		private System.Windows.Forms.Button QLNCC;
+		private System.Windows.Forms.Button QLDMHH;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+		private System.Windows.Forms.Button exit;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.Button rspass;
+		private System.Windows.Forms.GroupBox MenuQL;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button button5;
+		private System.Windows.Forms.Button button6;
+		private System.Windows.Forms.Button button7;
+		private System.ComponentModel.BackgroundWorker backgroundWorker1;
+	}
 }

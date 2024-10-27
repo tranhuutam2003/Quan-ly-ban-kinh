@@ -185,6 +185,18 @@
     <Compile Include="HoaDonNhap.Designer.cs">
       <DependentUpon>HoaDonNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDonBan.Designer.cs">
+      <DependentUpon>HoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDonNhap.Designer.cs">
+      <DependentUpon>HoaDonNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +283,12 @@
     <Compile Include="ThemChiTietHoaDonNhap.Designer.cs">
       <DependentUpon>ThemChiTietHoaDonNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemChiTietHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemChiTietHoaDonNhap.Designer.cs">
+      <DependentUpon>ThemChiTietHoaDonNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemCongDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +330,12 @@
     </Compile>
     <Compile Include="ThemHoaDonBan.Designer.cs">
       <DependentUpon>ThemHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHoaDonNhap.Designer.cs">
+      <DependentUpon>ThemHoaDonNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemHoaDonNhap.cs">
       <SubType>Form</SubType>
@@ -376,6 +400,12 @@
     <EmbeddedResource Include="QuanLyHoaDonNhap.resx">
       <DependentUpon>QuanLyHoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyKhachHang.resx">
+      <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNhaCungCap.resx">
+      <DependentUpon>QuanLyNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaHangHoa.resx">
+      <DependentUpon>SuaHangHoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuaKH.resx">
       <DependentUpon>SuaKH.cs</DependentUpon>

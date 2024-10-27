@@ -35,20 +35,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Ma
             // 
-            this.Ma.Location = new System.Drawing.Point(147, 108);
+            this.Ma.Location = new System.Drawing.Point(143, 40);
             this.Ma.Name = "Ma";
-            this.Ma.Size = new System.Drawing.Size(266, 22);
+            this.Ma.Size = new System.Drawing.Size(250, 22);
             this.Ma.TabIndex = 0;
             // 
             // Ten
             // 
-            this.Ten.Location = new System.Drawing.Point(147, 140);
+            this.Ten.Location = new System.Drawing.Point(143, 72);
             this.Ten.Name = "Ten";
-            this.Ten.Size = new System.Drawing.Size(266, 22);
+            this.Ten.Size = new System.Drawing.Size(250, 22);
             this.Ten.TabIndex = 1;
             // 
             // label1
@@ -64,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 114);
+            this.label2.Location = new System.Drawing.Point(8, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 16);
             this.label2.TabIndex = 3;
@@ -73,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 146);
+            this.label3.Location = new System.Drawing.Point(8, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 16);
             this.label3.TabIndex = 4;
@@ -81,9 +83,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(302, 209);
+            this.button1.Location = new System.Drawing.Point(255, 141);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 48);
+            this.button1.Size = new System.Drawing.Size(125, 30);
             this.button1.TabIndex = 5;
             this.button1.Text = "Xác nhận";
             this.button1.UseVisualStyleBackColor = true;
@@ -91,28 +93,40 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(15, 209);
+            this.button2.Location = new System.Drawing.Point(29, 141);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 48);
+            this.button2.Size = new System.Drawing.Size(125, 30);
             this.button2.TabIndex = 6;
             this.button2.Text = "Trở lại";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.Ten);
+            this.groupBox1.Controls.Add(this.Ma);
+            this.groupBox1.Location = new System.Drawing.Point(4, 68);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(409, 196);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thôn tin nước sản xuất";
+            // 
             // ThemNuocSanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(432, 403);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Ten);
-            this.Controls.Add(this.Ma);
             this.Name = "ThemNuocSanXuat";
             this.Text = "ThemNuocSanXuat";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,5 +141,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

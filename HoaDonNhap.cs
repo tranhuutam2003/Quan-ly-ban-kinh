@@ -66,7 +66,7 @@ namespace BTL_LTTQ_VIP
 		// Sự kiện thay đổi Mã hàng để tự động hiển thị đơn giá và mã NCC
 		private void comboBoxMaHang_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			
+
 		}
 
 		// Hàm để tải dữ liệu mã NCC và đơn giá theo Mã hàng

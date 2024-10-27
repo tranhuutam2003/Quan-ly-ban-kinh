@@ -41,12 +41,12 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 105);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 107);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(581, 397);
+            this.dataGridView1.Size = new System.Drawing.Size(874, 397);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -60,9 +60,9 @@
             // 
             // themKH
             // 
-            this.themKH.Location = new System.Drawing.Point(761, 107);
+            this.themKH.Location = new System.Drawing.Point(405, 516);
             this.themKH.Name = "themKH";
-            this.themKH.Size = new System.Drawing.Size(138, 67);
+            this.themKH.Size = new System.Drawing.Size(125, 30);
             this.themKH.TabIndex = 3;
             this.themKH.Text = "Thêm khách hàng";
             this.themKH.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@
             // 
             // suaKH
             // 
-            this.suaKH.Location = new System.Drawing.Point(761, 220);
+            this.suaKH.Location = new System.Drawing.Point(274, 516);
             this.suaKH.Name = "suaKH";
-            this.suaKH.Size = new System.Drawing.Size(138, 67);
+            this.suaKH.Size = new System.Drawing.Size(125, 30);
             this.suaKH.TabIndex = 4;
             this.suaKH.Text = "Sửa thông tin khách hàng";
             this.suaKH.UseVisualStyleBackColor = true;
@@ -80,9 +80,9 @@
             // 
             // xoaKH
             // 
-            this.xoaKH.Location = new System.Drawing.Point(761, 334);
+            this.xoaKH.Location = new System.Drawing.Point(143, 516);
             this.xoaKH.Name = "xoaKH";
-            this.xoaKH.Size = new System.Drawing.Size(138, 67);
+            this.xoaKH.Size = new System.Drawing.Size(125, 30);
             this.xoaKH.TabIndex = 5;
             this.xoaKH.Text = "Xóa khách hàng";
             this.xoaKH.UseVisualStyleBackColor = true;
@@ -90,9 +90,9 @@
             // 
             // exit
             // 
-            this.exit.Location = new System.Drawing.Point(761, 435);
+            this.exit.Location = new System.Drawing.Point(12, 516);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(138, 67);
+            this.exit.Size = new System.Drawing.Size(125, 30);
             this.exit.TabIndex = 6;
             this.exit.Text = "Trở lại";
             this.exit.UseVisualStyleBackColor = true;

@@ -120,8 +120,6 @@ namespace BTL_LTTQ_VIP
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			QuanLyHoaDonBan quanLyHoaDonBan = new QuanLyHoaDonBan();
-			quanLyHoaDonBan.Show();
 			this.Close();
 		}
 		private void UpdateHoaDonBan(string soHDB, string maNV, DateTime ngayBan, string maKhach, string tongTien)

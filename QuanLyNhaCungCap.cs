@@ -13,15 +13,22 @@ namespace BTL_LTTQ_VIP
 {
     public partial class QuanLyNhaCungCap : Form
     {
-        //SqlConnection con;
-        //SqlCommand cmd;
-        //SqlDataAdapter adt;
-        //DataTable dt;
+        private string TenNV;
+        private string CongViec;
         public QuanLyNhaCungCap()
         {
             InitializeComponent();
             LoadData();
         }
+
+        public QuanLyNhaCungCap(string tenNV, string congViec)
+        {
+            InitializeComponent();
+            TenNV = tenNV;   // Set user information
+            CongViec = congViec;
+            LoadData();
+        }
+
         private void LoadData()
         {
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
@@ -45,6 +52,23 @@ namespace BTL_LTTQ_VIP
         }
         private void ThemNCC_Click(object sender, EventArgs e)
         {
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home homeForm = new Home
+            {
+                TenNV = TenNV,
+                CongViec = CongViec
+            };
+            homeForm.Show();
+            this.Close();
+
         }
     }
 }

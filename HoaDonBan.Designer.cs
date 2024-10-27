@@ -55,12 +55,12 @@
 			// 
 			this.listView1.BackgroundImageTiled = true;
 			this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
+			this.columnHeader4,
+			this.columnHeader5,
+			this.columnHeader6,
+			this.columnHeader7,
+			this.columnHeader8,
+			this.columnHeader9});
 			this.listView1.HideSelection = false;
 			this.listView1.Location = new System.Drawing.Point(31, 203);
 			this.listView1.Name = "listView1";

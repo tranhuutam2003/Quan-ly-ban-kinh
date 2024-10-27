@@ -245,7 +245,7 @@ namespace BTL_LTTQ_VIP
 		private void btnXacNhan_Click(object sender, EventArgs e)
 		{
 			SaveData();
-			QuanLyHoaDonNhap quanLyHoaDonNhap= new QuanLyHoaDonNhap();
+			QuanLyHoaDonNhap quanLyHoaDonNhap = new QuanLyHoaDonNhap();
 			quanLyHoaDonNhap.ShowDialog();
 
 		}
@@ -259,7 +259,7 @@ namespace BTL_LTTQ_VIP
 		// Sự kiện nút hủy
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			QuanLyHoaDonNhap quanLyHoaDonNhap= new QuanLyHoaDonNhap();
+			QuanLyHoaDonNhap quanLyHoaDonNhap = new QuanLyHoaDonNhap();
 			quanLyHoaDonNhap.Show();
 
 			this.Hide();

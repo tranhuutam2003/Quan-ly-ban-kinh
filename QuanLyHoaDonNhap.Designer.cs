@@ -69,7 +69,7 @@
 			this.exit.TabIndex = 9;
 			this.exit.Text = "Quay lại";
 			this.exit.UseVisualStyleBackColor = true;
-			
+
 			// 
 			// button3
 			// 
@@ -114,7 +114,7 @@
 			this.Controls.Add(this.dataGridView1);
 			this.Name = "QuanLyHoaDonNhap";
 			this.Text = "QuanLyHoaDonNhap";
-			
+
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 

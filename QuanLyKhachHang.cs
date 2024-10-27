@@ -13,9 +13,19 @@ namespace BTL_LTTQ_VIP
 {
     public partial class QuanLyKhachHang : Form
     {
+        private string TenNV;
+        private string CongViec;
         public QuanLyKhachHang()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        public QuanLyKhachHang(string tenNV, string congViec)
+        {
+            InitializeComponent();
+            TenNV = tenNV;   // Set user information
+            CongViec = congViec;
             LoadData();
         }
 
@@ -44,7 +54,6 @@ namespace BTL_LTTQ_VIP
         {
             ThemKH themkh = new ThemKH();
             themkh.Show();
-            this.Close();
         }
 
         private void suaKH_Click(object sender, EventArgs e)
@@ -61,7 +70,6 @@ namespace BTL_LTTQ_VIP
                 // Mở form ThongTinNV với các thông tin cần sửa
                 SuaKH suaKH = new SuaKH(maKH, tenKH, diaChi, dienThoai);
                 suaKH.Show();
-                this.Close();
             }
             else
             {
@@ -71,9 +79,14 @@ namespace BTL_LTTQ_VIP
 
         private void exit_Click(object sender, EventArgs e)
         {
-            Home h = new Home();   
-            h.Show();
+            Home homeForm = new Home
+            {
+                TenNV = TenNV,
+                CongViec = CongViec
+            };
+            homeForm.Show();
             this.Close();
+
         }
 
         private void xoaKH_Click(object sender, EventArgs e)

@@ -288,7 +288,7 @@ namespace BTL_LTTQ_VIP
 			{
 				if (!isEditMode)  // Nếu ở chế độ sửa
 				{
-				
+
 					UpdateHoaDonNhap(soHDN, maNV, ngayNhap, maNCC, tongTien);
 				}
 				else  // Nếu ở chế độ thêm

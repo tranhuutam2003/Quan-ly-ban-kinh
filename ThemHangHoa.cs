@@ -379,5 +379,10 @@ namespace BTL_LTTQ_VIP
 			tnsx.Show();
 			this.Close();
 		}
-	}
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+			this.Close();
+        }
+    }
 }

@@ -59,14 +59,14 @@
             // 
             this.Ma.Location = new System.Drawing.Point(130, 84);
             this.Ma.Name = "Ma";
-            this.Ma.Size = new System.Drawing.Size(243, 22);
+            this.Ma.Size = new System.Drawing.Size(250, 22);
             this.Ma.TabIndex = 2;
             // 
             // Ten
             // 
             this.Ten.Location = new System.Drawing.Point(130, 112);
             this.Ten.Name = "Ten";
-            this.Ten.Size = new System.Drawing.Size(243, 22);
+            this.Ten.Size = new System.Drawing.Size(250, 22);
             this.Ten.TabIndex = 3;
             // 
             // label3
@@ -83,7 +83,7 @@
             // 
             this.exit.Location = new System.Drawing.Point(15, 168);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(88, 49);
+            this.exit.Size = new System.Drawing.Size(125, 30);
             this.exit.TabIndex = 5;
             this.exit.Text = "Trở lại";
             this.exit.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             // 
             this.xacnhan.Location = new System.Drawing.Point(285, 168);
             this.xacnhan.Name = "xacnhan";
-            this.xacnhan.Size = new System.Drawing.Size(88, 49);
+            this.xacnhan.Size = new System.Drawing.Size(125, 30);
             this.xacnhan.TabIndex = 6;
             this.xacnhan.Text = "Xác nhận";
             this.xacnhan.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(486, 399);
             this.Controls.Add(this.xacnhan);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.label3);

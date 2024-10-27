@@ -18,8 +18,8 @@ namespace BTL_LTTQ_VIP
         {
             InitializeComponent();
             this.Load += Home_Load;
-            MenuNV.Visible = false; 
-            MenuQL.Visible = false;
+            QLNV.Visible = false;
+
 
             //this.BackgroundImage = Image.FromFile(@"C:\Users\tam tran\source\repos\BTL LTTQ VIP\imglttq\backroundhome.jpg");
             //this.BackgroundImageLayout = ImageLayout.Stretch; // Để hình ảnh giãn theo kích thước form
@@ -35,23 +35,23 @@ namespace BTL_LTTQ_VIP
 
         private void QLNCC_Click(object sender, EventArgs e)
         {
-            QuanLyNhaCungCap qlncc = new QuanLyNhaCungCap();
+            QuanLyNhaCungCap qlncc = new QuanLyNhaCungCap(TenNV, CongViec);
             qlncc.Show();
-            
+            this.Hide();
         }
 
         private void QLKH_Click(object sender, EventArgs e)
         {
-            QuanLyKhachHang qlkh = new QuanLyKhachHang();
+            QuanLyKhachHang qlkh = new QuanLyKhachHang(TenNV, CongViec);
             qlkh.Show();
-            
+            this.Hide();
         }
 
         private void QLHDN_Click(object sender, EventArgs e)
         {
-            QuanLyHoaDonNhap qlhdn = new QuanLyHoaDonNhap();
-            qlhdn.Show();
-            
+            QuanLyHoaDonNhap quanLyHoaDonNhap = new QuanLyHoaDonNhap(TenNV, CongViec);
+            quanLyHoaDonNhap.Show();
+            this.Hide();
         }
 
         private void QLDMHH_Click(object sender, EventArgs e)
@@ -63,9 +63,9 @@ namespace BTL_LTTQ_VIP
 
         private void QLHDB_Click(object sender, EventArgs e)
         {
-            QuanLyHoaDonBan qlhdb = new QuanLyHoaDonBan();
+            QuanLyHoaDonBan qlhdb = new QuanLyHoaDonBan(TenNV, CongViec);
             qlhdb.Show();
-            
+            this.Hide();
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -82,7 +82,7 @@ namespace BTL_LTTQ_VIP
 
         private void Home_Load()
         {
-            
+
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -92,20 +92,20 @@ namespace BTL_LTTQ_VIP
 
         public void UpdateUI()
         {
-                lbTenNV.Text = TenNV ?? "Không có tên";
-                lbCV.Text = CongViec ?? "Không có công việc";
+            lbTenNV.Text = TenNV ?? "Không có tên";
+            lbCV.Text = CongViec ?? "Không có công việc";
 
             if (CongViec == "Nhân viên bán hàng")
             {
-                MenuNV.Visible = true;  // Show sales staff menu
-                MenuQL.Visible = false; // Hide manager menu
+                QLNV.Visible = false;  // Show sales staff menu
+
             }
             else if (CongViec == "Quản lý")
             {
-                MenuNV.Visible = false; // Hide sales staff menu
-                MenuQL.Visible = true;  // Show manager menu
+                QLNV.Visible = true; // Hide sales staff menu
+
             }
-            
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -141,18 +141,18 @@ namespace BTL_LTTQ_VIP
             this.Hide();
         }
 
-		private void button12_Click(object sender, EventArgs e)
-		{
+        private void button12_Click(object sender, EventArgs e)
+        {
             QuanLyHoaDonBan quanLyHoaDonBan = new QuanLyHoaDonBan();
             quanLyHoaDonBan.Show();
 
-		}
+        }
 
-		private void button8_Click(object sender, EventArgs e)
-		{
-            QuanLyHoaDonNhap quanLyHoaDonNhap= new QuanLyHoaDonNhap();
+        private void button8_Click(object sender, EventArgs e)
+        {
+            QuanLyHoaDonNhap quanLyHoaDonNhap = new QuanLyHoaDonNhap(TenNV, CongViec);
             quanLyHoaDonNhap.Show();
             this.Hide();
-		}
-	}
+        }
+    }
 }
