@@ -101,7 +101,7 @@ namespace BTL_LTTQ_VIP
                          JOIN CongViec cv ON nv.MaCV = cv.MaCV 
                          WHERE (nv.MaNV = @UserInput OR nv.emailNV = @UserInput) 
                          AND nv.MkNV = @Password 
-                         AND nv.IsActive = 1";
+                         ";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@UserInput", userInput);

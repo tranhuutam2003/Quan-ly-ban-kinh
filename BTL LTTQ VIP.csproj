@@ -266,6 +266,12 @@
     <EmbeddedResource Include="QuanLyHoaDonNhap.resx">
       <DependentUpon>QuanLyHoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyKhachHang.resx">
+      <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNhaCungCap.resx">
+      <DependentUpon>QuanLyNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuaHangHoa.resx">
+      <DependentUpon>SuaHangHoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuaKH.resx">
       <DependentUpon>SuaKH.cs</DependentUpon>

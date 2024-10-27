@@ -30,7 +30,7 @@ namespace BTL_LTTQ_VIP
                 try
                 {
                     connection.Open();
-                    string query = "SELECT * FROM NhanVien WHERE IsActive = 1";
+                    string query = "SELECT * FROM NhanVien";
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
@@ -54,7 +54,6 @@ namespace BTL_LTTQ_VIP
             ThemNV themNV = new ThemNV();
 
             themNV.Show();
-            this.Hide();
         }
 
 
@@ -75,7 +74,6 @@ namespace BTL_LTTQ_VIP
                 // Mở form ThongTinNV với các thông tin cần sửa
                 SuaNV suaNV = new SuaNV(maNV, tenNV, gioiTinh, ngaySinh, dienThoai, diaChi, maCV);
                 suaNV.Show();
-                this.Hide();
             }
             else
             {

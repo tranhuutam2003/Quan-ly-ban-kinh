@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net.Mail;
+using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -8,6 +10,7 @@ namespace BTL_LTTQ_VIP
 {
     public partial class ThemNV : Form
     {
+        private string verificationCode;
         public ThemNV()
         {
             InitializeComponent();
@@ -55,8 +58,6 @@ namespace BTL_LTTQ_VIP
 
         private void exit_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien quanLyNV = new QuanLyNhanVien();
-            quanLyNV.Show();
             this.Close();
         }
 
@@ -108,7 +109,7 @@ namespace BTL_LTTQ_VIP
                         command.Parameters.AddWithValue("@DienThoai", Dienthoai.Text);
                         command.Parameters.AddWithValue("@DiaChi", Diachi.Text);
                         command.Parameters.AddWithValue("@MaCV", maCongViec);
-
+                        command.Parameters.AddWithValue("@Email", Email.Text);
                         // Thực thi câu lệnh
                         command.ExecuteNonQuery();
                         MessageBox.Show("Thêm nhân viên thành công!");
@@ -125,5 +126,84 @@ namespace BTL_LTTQ_VIP
 		{
 
 		}
-	}
+
+        private void layma_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Email.Text))
+            {
+                MessageBox.Show("Vui lòng nhập email trước khi lấy mã xác nhận.", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // Kiểm tra định dạng email
+                var addr = new System.Net.Mail.MailAddress(Email.Text);
+                if (addr.Address != Email.Text)
+                {
+                    MessageBox.Show("Email không hợp lệ.", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Email không hợp lệ.", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Tạo mã xác nhận ngẫu nhiên
+            verificationCode = GenerateVerificationCode();
+
+            try
+            {
+                // Gửi email chứa mã xác nhận
+                SendVerificationEmail(Email.Text, verificationCode);
+                MessageBox.Show("Mã xác nhận đã được gửi đến email của bạn.", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra khi gửi email: {ex.Message}", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string GenerateVerificationCode()
+        {
+            Random random = new Random();
+            return random.Next(100000, 999999).ToString();
+        }
+
+        private void SendVerificationEmail(string email, string code)
+        {
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("tam62533@gmail.com", "dotnnpjevidbdxjr"),
+                EnableSsl = true,
+            };
+
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress("tam62533@gmail.com"),
+                Subject = "Mã xác nhận tài khoản nhân viên",
+                Body = $@"Kính gửi nhân viên,
+
+                Mã xác nhận của bạn là: {code}
+
+                Vui lòng không chia sẻ mã này với người khác.
+                Mã có hiệu lực trong vòng 5 phút.
+
+                Trân trọng,
+                [Tên công ty của bạn]",
+                                IsBodyHtml = false
+                            };
+
+            mailMessage.To.Add(email);
+            smtpClient.Send(mailMessage);
+        }
+    }
 }

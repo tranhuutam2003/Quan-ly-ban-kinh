@@ -29,7 +29,7 @@ namespace BTL_LTTQ_VIP
             loadData();
         }
 
-        private void loadData()
+        public void loadData()
         {
             using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
             {
@@ -107,12 +107,44 @@ namespace BTL_LTTQ_VIP
         {
             ThemHangHoa thh = new ThemHangHoa();
             thh.Show();
-            this.Close();
         }
 
         private void Sua_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Lấy dữ liệu từ hàng được chọn trong DataGridView
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                string maHang = selectedRow.Cells["MaHang"].Value.ToString();
+                string tenHang = selectedRow.Cells["TenHang"].Value.ToString();
+                string tenLoai = selectedRow.Cells["TenLoai"].Value.ToString();
+                string tenLoaiGong = selectedRow.Cells["TenLoaiGong"].Value.ToString();
+                string tenDangMat = selectedRow.Cells["TenDangMat"].Value.ToString();
+                string tenChatLieu = selectedRow.Cells["TenChatLieu"].Value.ToString();
+                string tenDiop = selectedRow.Cells["TenDiop"].Value.ToString();
+                string congDung = selectedRow.Cells["CongDung"].Value.ToString();
+                string tenDacDiem = selectedRow.Cells["TenDacDiem"].Value.ToString();
+                string tenMau = selectedRow.Cells["TenMau"].Value.ToString();
+                string tenNuocSX = selectedRow.Cells["TenNuocSX"].Value.ToString();
+                int soLuong = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
+                decimal donGiaNhap = Convert.ToDecimal(selectedRow.Cells["DonGiaNhap"].Value);
+                decimal donGiaBan = Convert.ToDecimal(selectedRow.Cells["DonGiaBan"].Value);
+                int thoiGianBaoHanh = Convert.ToInt32(selectedRow.Cells["ThoiGianBaoHanh"].Value);
+                string ghiChu = selectedRow.Cells["GhiChu"].Value.ToString();
 
+                // Tạo và truyền dữ liệu vào form SuaHangHoa
+                SuaHangHoa suaHangHoa = new SuaHangHoa(this,maHang, tenHang, tenLoai, tenLoaiGong, tenDangMat,
+                                                        tenChatLieu, tenDiop, congDung, tenDacDiem, tenMau,
+                                                        tenNuocSX, soLuong, donGiaNhap, donGiaBan,
+                                                        thoiGianBaoHanh, ghiChu);
+
+                // Hiển thị form SuaHangHoa
+                suaHangHoa.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn hàng hóa cần sửa.");
+            }
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -124,6 +156,55 @@ namespace BTL_LTTQ_VIP
             };
             homeForm.Show();
             this.Close();
+        }
+
+        private void Xoa_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Lấy mã hàng hóa từ hàng được chọn
+                string maHang = dataGridView1.SelectedRows[0].Cells["MaHang"].Value.ToString();
+
+                // Hiển thị hộp thoại xác nhận
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa hàng hóa này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            // Sử dụng câu lệnh UPDATE để thực hiện soft delete
+                            string query = "UPDATE DanhMucHangHoa SET IsActive = 0 WHERE MaHang = @MaHang";
+                            using (SqlCommand command = new SqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@MaHang", maHang);
+                                int rowsAffected = command.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Hàng hóa đã được xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    // Cập nhật lại DataGridView
+                                    loadData();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Không tìm thấy hàng hóa để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Lỗi khi xóa hàng hóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn hàng hóa cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

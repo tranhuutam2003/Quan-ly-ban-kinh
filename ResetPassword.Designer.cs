@@ -98,35 +98,35 @@
             // 
             this.NLMKMoi.Location = new System.Drawing.Point(212, 223);
             this.NLMKMoi.Name = "NLMKMoi";
-            this.NLMKMoi.Size = new System.Drawing.Size(307, 22);
+            this.NLMKMoi.Size = new System.Drawing.Size(250, 22);
             this.NLMKMoi.TabIndex = 3;
             // 
             // MKMoi
             // 
             this.MKMoi.Location = new System.Drawing.Point(212, 153);
             this.MKMoi.Name = "MKMoi";
-            this.MKMoi.Size = new System.Drawing.Size(307, 22);
+            this.MKMoi.Size = new System.Drawing.Size(250, 22);
             this.MKMoi.TabIndex = 2;
             // 
             // MaXacNhan
             // 
             this.MaXacNhan.Location = new System.Drawing.Point(212, 88);
             this.MaXacNhan.Name = "MaXacNhan";
-            this.MaXacNhan.Size = new System.Drawing.Size(307, 22);
+            this.MaXacNhan.Size = new System.Drawing.Size(250, 22);
             this.MaXacNhan.TabIndex = 1;
             // 
             // Email
             // 
             this.Email.Location = new System.Drawing.Point(212, 24);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(307, 22);
+            this.Email.Size = new System.Drawing.Size(250, 22);
             this.Email.TabIndex = 0;
             // 
             // exit
             // 
             this.exit.Location = new System.Drawing.Point(138, 367);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(150, 35);
+            this.exit.Size = new System.Drawing.Size(125, 30);
             this.exit.TabIndex = 8;
             this.exit.Text = "Trở lại";
             this.exit.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
             // 
             this.xacnhan.Location = new System.Drawing.Point(519, 367);
             this.xacnhan.Name = "xacnhan";
-            this.xacnhan.Size = new System.Drawing.Size(150, 35);
+            this.xacnhan.Size = new System.Drawing.Size(125, 30);
             this.xacnhan.TabIndex = 9;
             this.xacnhan.Text = "Xác nhận";
             this.xacnhan.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@
             // 
             this.sendemailcode.Location = new System.Drawing.Point(329, 367);
             this.sendemailcode.Name = "sendemailcode";
-            this.sendemailcode.Size = new System.Drawing.Size(150, 35);
+            this.sendemailcode.Size = new System.Drawing.Size(125, 30);
             this.sendemailcode.TabIndex = 10;
             this.sendemailcode.Text = "Gửi mã xác nhận";
             this.sendemailcode.UseVisualStyleBackColor = true;

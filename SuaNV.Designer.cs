@@ -45,6 +45,9 @@
             this.exit = new System.Windows.Forms.Button();
             this.Xacnhan = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.email = new System.Windows.Forms.TextBox();
+            this.layma = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MaNV
@@ -71,6 +74,7 @@
             // 
             // Ngaysinh
             // 
+            this.Ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Ngaysinh.Location = new System.Drawing.Point(118, 192);
             this.Ngaysinh.Name = "Ngaysinh";
             this.Ngaysinh.Size = new System.Drawing.Size(244, 22);
@@ -158,13 +162,13 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(17, 284);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 16);
+            this.label7.Size = new System.Drawing.Size(67, 16);
             this.label7.TabIndex = 31;
-            this.label7.Text = "Mã công việc";
+            this.label7.Text = "Công việc";
             // 
             // exit
             // 
-            this.exit.Location = new System.Drawing.Point(20, 306);
+            this.exit.Location = new System.Drawing.Point(18, 352);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(92, 39);
             this.exit.TabIndex = 32;
@@ -174,7 +178,7 @@
             // 
             // Xacnhan
             // 
-            this.Xacnhan.Location = new System.Drawing.Point(270, 306);
+            this.Xacnhan.Location = new System.Drawing.Point(270, 352);
             this.Xacnhan.Name = "Xacnhan";
             this.Xacnhan.Size = new System.Drawing.Size(92, 39);
             this.Xacnhan.TabIndex = 33;
@@ -192,11 +196,40 @@
             this.label8.TabIndex = 34;
             this.label8.Text = "Sửa thông tin nhân viên";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 320);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 16);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Email";
+            // 
+            // email
+            // 
+            this.email.Location = new System.Drawing.Point(118, 314);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(244, 22);
+            this.email.TabIndex = 36;
+            // 
+            // layma
+            // 
+            this.layma.Location = new System.Drawing.Point(147, 352);
+            this.layma.Name = "layma";
+            this.layma.Size = new System.Drawing.Size(92, 39);
+            this.layma.TabIndex = 37;
+            this.layma.Text = "Mã xác nhận";
+            this.layma.UseVisualStyleBackColor = true;
+            this.layma.Click += new System.EventHandler(this.layma_Click);
+            // 
             // SuaNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 441);
+            this.Controls.Add(this.layma);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Xacnhan);
             this.Controls.Add(this.exit);
@@ -240,5 +273,8 @@
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Button Xacnhan;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.Button layma;
     }
 }

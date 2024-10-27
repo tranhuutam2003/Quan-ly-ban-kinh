@@ -45,28 +45,28 @@
             // 
             this.MaKH.Location = new System.Drawing.Point(131, 86);
             this.MaKH.Name = "MaKH";
-            this.MaKH.Size = new System.Drawing.Size(244, 22);
+            this.MaKH.Size = new System.Drawing.Size(250, 22);
             this.MaKH.TabIndex = 2;
             // 
             // TenKH
             // 
             this.TenKH.Location = new System.Drawing.Point(131, 114);
             this.TenKH.Name = "TenKH";
-            this.TenKH.Size = new System.Drawing.Size(244, 22);
+            this.TenKH.Size = new System.Drawing.Size(250, 22);
             this.TenKH.TabIndex = 3;
             // 
             // DiaChiKH
             // 
             this.DiaChiKH.Location = new System.Drawing.Point(131, 142);
             this.DiaChiKH.Name = "DiaChiKH";
-            this.DiaChiKH.Size = new System.Drawing.Size(244, 22);
+            this.DiaChiKH.Size = new System.Drawing.Size(250, 22);
             this.DiaChiKH.TabIndex = 4;
             // 
             // SDTKH
             // 
             this.SDTKH.Location = new System.Drawing.Point(131, 170);
             this.SDTKH.Name = "SDTKH";
-            this.SDTKH.Size = new System.Drawing.Size(244, 22);
+            this.SDTKH.Size = new System.Drawing.Size(250, 22);
             this.SDTKH.TabIndex = 5;
             // 
             // label1
@@ -119,7 +119,7 @@
             // 
             this.exit.Location = new System.Drawing.Point(15, 249);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(92, 39);
+            this.exit.Size = new System.Drawing.Size(125, 30);
             this.exit.TabIndex = 33;
             this.exit.Text = "Trở lại";
             this.exit.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             // 
             this.Xacnhan.Location = new System.Drawing.Point(283, 249);
             this.Xacnhan.Name = "Xacnhan";
-            this.Xacnhan.Size = new System.Drawing.Size(92, 39);
+            this.Xacnhan.Size = new System.Drawing.Size(125, 30);
             this.Xacnhan.TabIndex = 34;
             this.Xacnhan.Text = "Xác nhận";
             this.Xacnhan.UseVisualStyleBackColor = true;

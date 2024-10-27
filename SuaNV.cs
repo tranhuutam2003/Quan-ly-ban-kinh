@@ -138,12 +138,15 @@ namespace BTL_LTTQ_VIP
 
         private void exit_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien quanLyNV = new QuanLyNhanVien();
-            quanLyNV.Show();
             this.Close();
         }
 
         private void CongViec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void layma_Click(object sender, EventArgs e)
         {
 
         }

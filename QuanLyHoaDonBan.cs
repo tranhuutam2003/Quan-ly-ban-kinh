@@ -14,13 +14,25 @@ namespace BTL_LTTQ_VIP
 {
     public partial class QuanLyHoaDonBan : Form
     {
+        private string TenNV;
+        private string CongViec;
 
-		public QuanLyHoaDonBan()
+
+        public QuanLyHoaDonBan()
         {
             InitializeComponent();
 			LoadData();
         }
-		private void LoadData()
+
+        public QuanLyHoaDonBan(string tenNV, string congViec)
+        {
+            InitializeComponent();
+            TenNV = tenNV;   // Set user information
+            CongViec = congViec;
+            LoadData();
+        }
+
+        private void LoadData()
 		{
 			using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
 			{
@@ -70,17 +82,23 @@ GROUP BY
 
 		private void exit_Click(object sender, EventArgs e)
 		{
-			this.Hide();
-		}
+            Home homeForm = new Home
+            {
+                TenNV = TenNV,
+                CongViec = CongViec
+            };
+            homeForm.Show();
+            this.Close();
 
-		//Xem chi tiet hoa don ban
-		private void btnXemChiTiet_Click(object sender, EventArgs e)
+        }
+
+        //Xem chi tiet hoa don ban
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
 		{
 			ChiTietHoaDonBan chiTietHoaDon= new ChiTietHoaDonBan();
 			chiTietHoaDon.StartPosition = FormStartPosition.Manual;
 			chiTietHoaDon.Location = this.Location;
 			chiTietHoaDon.Show();
-			this.Hide();
 		}
 
 	
@@ -113,7 +131,6 @@ GROUP BY
 			//this.Hide();
 			HoaDonBan hoaDonBan = new HoaDonBan();
 			hoaDonBan.Show();
-			this.Hide();
 		}
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

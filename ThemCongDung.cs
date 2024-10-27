@@ -46,8 +46,6 @@ namespace BTL_LTTQ_VIP
 
         private void exit_Click(object sender, EventArgs e)
         {
-            ThemHangHoa qlhh = new ThemHangHoa();
-            qlhh.Show();
             this.Close();
         }
     }

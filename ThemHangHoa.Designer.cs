@@ -76,9 +76,9 @@
             // 
             // Xacnhan
             // 
-            this.Xacnhan.Location = new System.Drawing.Point(363, 513);
+            this.Xacnhan.Location = new System.Drawing.Point(282, 513);
             this.Xacnhan.Name = "Xacnhan";
-            this.Xacnhan.Size = new System.Drawing.Size(100, 50);
+            this.Xacnhan.Size = new System.Drawing.Size(125, 30);
             this.Xacnhan.TabIndex = 0;
             this.Xacnhan.Text = "Xác nhận";
             this.Xacnhan.UseVisualStyleBackColor = true;
@@ -88,44 +88,45 @@
             // 
             this.Exit.Location = new System.Drawing.Point(157, 513);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(100, 50);
+            this.Exit.Size = new System.Drawing.Size(125, 30);
             this.Exit.TabIndex = 1;
             this.Exit.Text = "Trở lại";
             this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // Soluong
             // 
             this.Soluong.Location = new System.Drawing.Point(157, 401);
             this.Soluong.Name = "Soluong";
-            this.Soluong.Size = new System.Drawing.Size(306, 22);
+            this.Soluong.Size = new System.Drawing.Size(250, 22);
             this.Soluong.TabIndex = 3;
             // 
             // Dongianhap
             // 
             this.Dongianhap.Location = new System.Drawing.Point(157, 429);
             this.Dongianhap.Name = "Dongianhap";
-            this.Dongianhap.Size = new System.Drawing.Size(306, 22);
+            this.Dongianhap.Size = new System.Drawing.Size(250, 22);
             this.Dongianhap.TabIndex = 4;
             // 
             // Dongiaban
             // 
             this.Dongiaban.Location = new System.Drawing.Point(157, 457);
             this.Dongiaban.Name = "Dongiaban";
-            this.Dongiaban.Size = new System.Drawing.Size(306, 22);
+            this.Dongiaban.Size = new System.Drawing.Size(250, 22);
             this.Dongiaban.TabIndex = 5;
             // 
             // TenHH
             // 
             this.TenHH.Location = new System.Drawing.Point(157, 103);
             this.TenHH.Name = "TenHH";
-            this.TenHH.Size = new System.Drawing.Size(306, 22);
+            this.TenHH.Size = new System.Drawing.Size(250, 22);
             this.TenHH.TabIndex = 15;
             // 
             // MaHH
             // 
             this.MaHH.Location = new System.Drawing.Point(157, 75);
             this.MaHH.Name = "MaHH";
-            this.MaHH.Size = new System.Drawing.Size(306, 22);
+            this.MaHH.Size = new System.Drawing.Size(250, 22);
             this.MaHH.TabIndex = 16;
             // 
             // Ghichu
@@ -133,7 +134,7 @@
             this.Ghichu.Location = new System.Drawing.Point(533, 291);
             this.Ghichu.Multiline = true;
             this.Ghichu.Name = "Ghichu";
-            this.Ghichu.Size = new System.Drawing.Size(353, 106);
+            this.Ghichu.Size = new System.Drawing.Size(386, 106);
             this.Ghichu.TabIndex = 17;
             // 
             // label1
@@ -295,7 +296,7 @@
             this.Loaikinh.FormattingEnabled = true;
             this.Loaikinh.Location = new System.Drawing.Point(157, 131);
             this.Loaikinh.Name = "Loaikinh";
-            this.Loaikinh.Size = new System.Drawing.Size(306, 24);
+            this.Loaikinh.Size = new System.Drawing.Size(250, 24);
             this.Loaikinh.TabIndex = 35;
             // 
             // Loaigong
@@ -303,7 +304,7 @@
             this.Loaigong.FormattingEnabled = true;
             this.Loaigong.Location = new System.Drawing.Point(157, 161);
             this.Loaigong.Name = "Loaigong";
-            this.Loaigong.Size = new System.Drawing.Size(306, 24);
+            this.Loaigong.Size = new System.Drawing.Size(250, 24);
             this.Loaigong.TabIndex = 36;
             // 
             // Dangmat
@@ -311,7 +312,7 @@
             this.Dangmat.FormattingEnabled = true;
             this.Dangmat.Location = new System.Drawing.Point(157, 191);
             this.Dangmat.Name = "Dangmat";
-            this.Dangmat.Size = new System.Drawing.Size(306, 24);
+            this.Dangmat.Size = new System.Drawing.Size(250, 24);
             this.Dangmat.TabIndex = 37;
             // 
             // Chatlieu
@@ -319,7 +320,7 @@
             this.Chatlieu.FormattingEnabled = true;
             this.Chatlieu.Location = new System.Drawing.Point(157, 221);
             this.Chatlieu.Name = "Chatlieu";
-            this.Chatlieu.Size = new System.Drawing.Size(306, 24);
+            this.Chatlieu.Size = new System.Drawing.Size(250, 24);
             this.Chatlieu.TabIndex = 38;
             // 
             // Diop
@@ -327,7 +328,7 @@
             this.Diop.FormattingEnabled = true;
             this.Diop.Location = new System.Drawing.Point(157, 251);
             this.Diop.Name = "Diop";
-            this.Diop.Size = new System.Drawing.Size(306, 24);
+            this.Diop.Size = new System.Drawing.Size(250, 24);
             this.Diop.TabIndex = 39;
             // 
             // Congdung
@@ -335,7 +336,7 @@
             this.Congdung.FormattingEnabled = true;
             this.Congdung.Location = new System.Drawing.Point(157, 281);
             this.Congdung.Name = "Congdung";
-            this.Congdung.Size = new System.Drawing.Size(306, 24);
+            this.Congdung.Size = new System.Drawing.Size(250, 24);
             this.Congdung.TabIndex = 40;
             // 
             // Dacdiem
@@ -343,7 +344,7 @@
             this.Dacdiem.FormattingEnabled = true;
             this.Dacdiem.Location = new System.Drawing.Point(157, 311);
             this.Dacdiem.Name = "Dacdiem";
-            this.Dacdiem.Size = new System.Drawing.Size(306, 24);
+            this.Dacdiem.Size = new System.Drawing.Size(250, 24);
             this.Dacdiem.TabIndex = 41;
             // 
             // Mausac
@@ -351,7 +352,7 @@
             this.Mausac.FormattingEnabled = true;
             this.Mausac.Location = new System.Drawing.Point(157, 341);
             this.Mausac.Name = "Mausac";
-            this.Mausac.Size = new System.Drawing.Size(306, 24);
+            this.Mausac.Size = new System.Drawing.Size(250, 24);
             this.Mausac.TabIndex = 42;
             // 
             // Nuocsanxuat
@@ -359,21 +360,21 @@
             this.Nuocsanxuat.FormattingEnabled = true;
             this.Nuocsanxuat.Location = new System.Drawing.Point(157, 371);
             this.Nuocsanxuat.Name = "Nuocsanxuat";
-            this.Nuocsanxuat.Size = new System.Drawing.Size(306, 24);
+            this.Nuocsanxuat.Size = new System.Drawing.Size(250, 24);
             this.Nuocsanxuat.TabIndex = 43;
             // 
             // Thoigianbaohanh
             // 
             this.Thoigianbaohanh.Location = new System.Drawing.Point(157, 485);
             this.Thoigianbaohanh.Name = "Thoigianbaohanh";
-            this.Thoigianbaohanh.Size = new System.Drawing.Size(306, 22);
+            this.Thoigianbaohanh.Size = new System.Drawing.Size(250, 22);
             this.Thoigianbaohanh.TabIndex = 44;
             // 
             // themloaikinh
             // 
             this.themloaikinh.Location = new System.Drawing.Point(533, 64);
             this.themloaikinh.Name = "themloaikinh";
-            this.themloaikinh.Size = new System.Drawing.Size(100, 50);
+            this.themloaikinh.Size = new System.Drawing.Size(125, 30);
             this.themloaikinh.TabIndex = 45;
             this.themloaikinh.Text = "Thêm loại kính";
             this.themloaikinh.UseVisualStyleBackColor = true;
@@ -383,7 +384,7 @@
             // 
             this.themloaigong.Location = new System.Drawing.Point(663, 64);
             this.themloaigong.Name = "themloaigong";
-            this.themloaigong.Size = new System.Drawing.Size(100, 50);
+            this.themloaigong.Size = new System.Drawing.Size(125, 30);
             this.themloaigong.TabIndex = 46;
             this.themloaigong.Text = "Thêm loại gọng";
             this.themloaigong.UseVisualStyleBackColor = true;
@@ -391,9 +392,9 @@
             // 
             // Themdangmat
             // 
-            this.Themdangmat.Location = new System.Drawing.Point(786, 64);
+            this.Themdangmat.Location = new System.Drawing.Point(794, 64);
             this.Themdangmat.Name = "Themdangmat";
-            this.Themdangmat.Size = new System.Drawing.Size(100, 50);
+            this.Themdangmat.Size = new System.Drawing.Size(125, 30);
             this.Themdangmat.TabIndex = 47;
             this.Themdangmat.Text = "Thêm dạng mắt";
             this.Themdangmat.UseVisualStyleBackColor = true;
@@ -403,7 +404,7 @@
             // 
             this.themchatlieu.Location = new System.Drawing.Point(533, 144);
             this.themchatlieu.Name = "themchatlieu";
-            this.themchatlieu.Size = new System.Drawing.Size(100, 50);
+            this.themchatlieu.Size = new System.Drawing.Size(125, 30);
             this.themchatlieu.TabIndex = 48;
             this.themchatlieu.Text = "Thêm chất liệu";
             this.themchatlieu.UseVisualStyleBackColor = true;
@@ -413,7 +414,7 @@
             // 
             this.themdiop.Location = new System.Drawing.Point(663, 144);
             this.themdiop.Name = "themdiop";
-            this.themdiop.Size = new System.Drawing.Size(100, 50);
+            this.themdiop.Size = new System.Drawing.Size(125, 30);
             this.themdiop.TabIndex = 49;
             this.themdiop.Text = "Thêm đi-ốp";
             this.themdiop.UseVisualStyleBackColor = true;
@@ -421,9 +422,9 @@
             // 
             // themcongdung
             // 
-            this.themcongdung.Location = new System.Drawing.Point(786, 144);
+            this.themcongdung.Location = new System.Drawing.Point(794, 144);
             this.themcongdung.Name = "themcongdung";
-            this.themcongdung.Size = new System.Drawing.Size(100, 50);
+            this.themcongdung.Size = new System.Drawing.Size(125, 30);
             this.themcongdung.TabIndex = 50;
             this.themcongdung.Text = "Thêm công dụng";
             this.themcongdung.UseVisualStyleBackColor = true;
@@ -431,9 +432,9 @@
             // 
             // themdacdiem
             // 
-            this.themdacdiem.Location = new System.Drawing.Point(533, 216);
+            this.themdacdiem.Location = new System.Drawing.Point(533, 214);
             this.themdacdiem.Name = "themdacdiem";
-            this.themdacdiem.Size = new System.Drawing.Size(100, 50);
+            this.themdacdiem.Size = new System.Drawing.Size(125, 30);
             this.themdacdiem.TabIndex = 51;
             this.themdacdiem.Text = "Thêm đặc điểm";
             this.themdacdiem.UseVisualStyleBackColor = true;
@@ -443,7 +444,7 @@
             // 
             this.themmausac.Location = new System.Drawing.Point(663, 214);
             this.themmausac.Name = "themmausac";
-            this.themmausac.Size = new System.Drawing.Size(100, 50);
+            this.themmausac.Size = new System.Drawing.Size(125, 30);
             this.themmausac.TabIndex = 52;
             this.themmausac.Text = "Thêm màu sắc";
             this.themmausac.UseVisualStyleBackColor = true;
@@ -451,11 +452,11 @@
             // 
             // themnuocsanxuat
             // 
-            this.themnuocsanxuat.Location = new System.Drawing.Point(786, 214);
+            this.themnuocsanxuat.Location = new System.Drawing.Point(794, 214);
             this.themnuocsanxuat.Name = "themnuocsanxuat";
-            this.themnuocsanxuat.Size = new System.Drawing.Size(100, 50);
+            this.themnuocsanxuat.Size = new System.Drawing.Size(125, 30);
             this.themnuocsanxuat.TabIndex = 53;
-            this.themnuocsanxuat.Text = "Thêm nước sản xuất";
+            this.themnuocsanxuat.Text = "Thêm nước SX";
             this.themnuocsanxuat.UseVisualStyleBackColor = true;
             this.themnuocsanxuat.Click += new System.EventHandler(this.themnuocsanxuat_Click);
             // 

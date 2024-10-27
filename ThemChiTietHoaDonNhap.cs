@@ -259,10 +259,7 @@ namespace BTL_LTTQ_VIP
 		// Sự kiện nút hủy
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			QuanLyHoaDonNhap quanLyHoaDonNhap= new QuanLyHoaDonNhap();
-			quanLyHoaDonNhap.Show();
-
-			this.Hide();
+			this.Close();
 		}
 	}
 }

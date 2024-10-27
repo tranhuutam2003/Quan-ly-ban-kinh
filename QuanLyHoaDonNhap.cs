@@ -7,13 +7,23 @@ namespace BTL_LTTQ_VIP
 {
 	public partial class QuanLyHoaDonNhap : Form
 	{
-		public QuanLyHoaDonNhap()
+        private string TenNV;
+        private string CongViec;
+        public QuanLyHoaDonNhap()
 		{
 			InitializeComponent();
 			LoadData();
 		}
 
-		private void LoadData()
+        public QuanLyHoaDonNhap(string tenNV, string congViec)
+        {
+            InitializeComponent();
+            TenNV = tenNV;   // Set user information
+            CongViec = congViec;
+            LoadData();
+        }
+
+        private void LoadData()
 		{
 			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
 			{
@@ -46,7 +56,6 @@ namespace BTL_LTTQ_VIP
 			// Mở form ThemChiTietHoaDonNhap để thêm mới
 			ThemChiTietHoaDonNhap themChiTietHoaDonNhap = new ThemChiTietHoaDonNhap();
 			themChiTietHoaDonNhap.Show();
-			this.Hide();
 		}
 
 		private void button2_Click(object sender, EventArgs e)
@@ -67,7 +76,6 @@ namespace BTL_LTTQ_VIP
 				// Mở form ThemChiTietHoaDonNhap với chế độ chỉnh sửa
 				ThemChiTietHoaDonNhap themChiTietHoaDonNhap = new ThemChiTietHoaDonNhap(true, soHDN, maHang, soLuong, donGia, giamGia, thanhTien, ngayNhap, maNV);
 				themChiTietHoaDonNhap.Show();
-				this.Hide();
 			}
 			else
 			{
@@ -134,7 +142,6 @@ namespace BTL_LTTQ_VIP
 			chiTietHoaDonNhap.StartPosition = FormStartPosition.Manual;
 			chiTietHoaDonNhap.Location = this.Location;
 			chiTietHoaDonNhap.Show();
-			this.Hide();
 		}
 
 		private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -166,5 +173,16 @@ namespace BTL_LTTQ_VIP
 				}
 			}
 		}
-	}
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Home homeForm = new Home
+            {
+                TenNV = TenNV,
+                CongViec = CongViec
+            };
+            homeForm.Show();
+            this.Close();
+        }
+    }
 }

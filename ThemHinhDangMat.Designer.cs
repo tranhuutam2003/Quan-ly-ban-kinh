@@ -69,21 +69,21 @@
             // 
             this.Ma.Location = new System.Drawing.Point(140, 114);
             this.Ma.Name = "Ma";
-            this.Ma.Size = new System.Drawing.Size(255, 22);
+            this.Ma.Size = new System.Drawing.Size(250, 22);
             this.Ma.TabIndex = 3;
             // 
             // Ten
             // 
             this.Ten.Location = new System.Drawing.Point(140, 152);
             this.Ten.Name = "Ten";
-            this.Ten.Size = new System.Drawing.Size(255, 22);
+            this.Ten.Size = new System.Drawing.Size(250, 22);
             this.Ten.TabIndex = 4;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(257, 211);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 44);
+            this.button1.Size = new System.Drawing.Size(125, 30);
             this.button1.TabIndex = 5;
             this.button1.Text = "Xác nhận";
             this.button1.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(15, 211);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 44);
+            this.button2.Size = new System.Drawing.Size(125, 30);
             this.button2.TabIndex = 6;
             this.button2.Text = "Trở lại";
             this.button2.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(457, 350);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Ten);

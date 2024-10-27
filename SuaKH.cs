@@ -77,8 +77,6 @@ namespace BTL_LTTQ_VIP
 
         private void exit_Click(object sender, EventArgs e)
         {
-            QuanLyKhachHang qlkh = new QuanLyKhachHang();
-            qlkh.Show();
             this.Close();
         }
     }
