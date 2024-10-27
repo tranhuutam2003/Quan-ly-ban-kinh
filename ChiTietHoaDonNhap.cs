@@ -51,10 +51,6 @@ namespace BTL_LTTQ_VIP
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			QuanLyHoaDonNhap quanLyHoaDonNhap= new QuanLyHoaDonNhap();
-			quanLyHoaDonNhap.StartPosition = FormStartPosition.Manual;
-			quanLyHoaDonNhap.Location= this.Location;
-			quanLyHoaDonNhap.Show();
 			this.Close();
 		}
 

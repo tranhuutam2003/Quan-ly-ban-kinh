@@ -25,7 +25,7 @@ namespace BTL_LTTQ_VIP
 		{
 			using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
 			{
-				string query = "SELECT MaHang, TenHang, DonGiaBan FROM DanhMucHangHoa WHERE IsActive = 1";
+				string query = "SELECT MaHang, TenHang, DonGiaBan FROM DanhMucHangHoa";
 				SqlCommand cmd = new SqlCommand(query, conn);
 
 				try
@@ -247,7 +247,7 @@ namespace BTL_LTTQ_VIP
 		{
 			using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
 			{
-				string query = "SELECT MaNV, TenNV FROM NhanVien WHERE IsActive = 1"; // Chỉ chọn nhân viên đang hoạt động
+				string query = "SELECT MaNV, TenNV FROM NhanVien"; // Chỉ chọn nhân viên đang hoạt động
 				SqlDataAdapter da = new SqlDataAdapter(query, conn);
 				DataTable dt = new DataTable();
 				da.Fill(dt);
@@ -273,8 +273,6 @@ namespace BTL_LTTQ_VIP
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			QuanLyHoaDonBan quanLyHoaDonBan = new QuanLyHoaDonBan();
-			quanLyHoaDonBan.Show();
 			this.Close();
 		}
 	}

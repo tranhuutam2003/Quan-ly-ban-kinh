@@ -18,8 +18,8 @@ namespace BTL_LTTQ_VIP
         {
             InitializeComponent();
             this.Load += Home_Load;
-            QLNV.Visible = false; 
-            
+            QLNV.Visible = false;
+            btndoanhthu.Visible = false;
 
             //this.BackgroundImage = Image.FromFile(@"C:\Users\tam tran\source\repos\BTL LTTQ VIP\imglttq\backroundhome.jpg");
             //this.BackgroundImageLayout = ImageLayout.Stretch; // Để hình ảnh giãn theo kích thước form
@@ -97,13 +97,14 @@ namespace BTL_LTTQ_VIP
 
             if (CongViec == "Nhân viên bán hàng")
             {
-                QLNV.Visible = false;  // Show sales staff menu
+                QLNV.Visible = false;
+                btndoanhthu.Visible = false;// Show sales staff menu
                 
             }
             else if (CongViec == "Quản lý")
             {
                 QLNV.Visible = true; // Hide sales staff menu
-                
+                btndoanhthu.Visible = true;
             }
             
         }
@@ -154,5 +155,12 @@ namespace BTL_LTTQ_VIP
             quanLyHoaDonNhap.Show();
             this.Hide();
 		}
-	}
+
+        private void btndoanhthu_Click(object sender, EventArgs e)
+        {
+            DoanhThu dt = new DoanhThu(TenNV, CongViec);
+            dt.Show();
+            this.Hide();
+        }
+    }
 }

@@ -47,8 +47,6 @@ namespace BTL_LTTQ_VIP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ThemHangHoa qlhh = new ThemHangHoa();
-            qlhh.Show();
             this.Close();
         }
     }

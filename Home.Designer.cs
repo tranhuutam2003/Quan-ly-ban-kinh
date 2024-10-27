@@ -57,8 +57,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btndoanhthu = new System.Windows.Forms.Button();
             this.plTenNV.SuspendLayout();
             this.plCV.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -197,9 +198,10 @@
             this.flowLayoutPanel1.Controls.Add(this.QLKH);
             this.flowLayoutPanel1.Controls.Add(this.QLHDB);
             this.flowLayoutPanel1.Controls.Add(this.QLNV);
+            this.flowLayoutPanel1.Controls.Add(this.btndoanhthu);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 25);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 234);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 275);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // panel1
@@ -282,7 +284,7 @@
             this.MenuQL.Controls.Add(this.flowLayoutPanel1);
             this.MenuQL.Location = new System.Drawing.Point(7, 88);
             this.MenuQL.Name = "MenuQL";
-            this.MenuQL.Size = new System.Drawing.Size(170, 265);
+            this.MenuQL.Size = new System.Drawing.Size(170, 306);
             this.MenuQL.TabIndex = 17;
             this.MenuQL.TabStop = false;
             this.MenuQL.Text = "Menu";
@@ -382,10 +384,6 @@
             this.button7.Text = "Tìm khách hàng";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BTL_LTTQ_VIP.Properties.Resources.bookshelf_413705_640;
@@ -396,6 +394,21 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // btndoanhthu
+            // 
+            this.btndoanhthu.Location = new System.Drawing.Point(3, 236);
+            this.btndoanhthu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btndoanhthu.Name = "btndoanhthu";
+            this.btndoanhthu.Size = new System.Drawing.Size(150, 35);
+            this.btndoanhthu.TabIndex = 20;
+            this.btndoanhthu.Text = "Doanh Thu";
+            this.btndoanhthu.UseVisualStyleBackColor = true;
+            this.btndoanhthu.Click += new System.EventHandler(this.btndoanhthu_Click);
             // 
             // Home
             // 
@@ -456,5 +469,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btndoanhthu;
     }
 }
