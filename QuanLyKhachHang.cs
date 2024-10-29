@@ -36,7 +36,7 @@ namespace BTL_LTTQ_VIP
                 try
                 {
                     connection.Open();
-                    string query = "SELECT MaKhach,TenKhach,DiaChi,DienThoai FROM KhachHang WHERE IsActive = 1";
+                    string query = "SELECT MaKhach,TenKhach,DiaChi,DienThoai FROM KhachHang ";
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);

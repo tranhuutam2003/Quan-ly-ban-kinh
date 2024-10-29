@@ -21,15 +21,19 @@ namespace BTL_LTTQ_VIP
 	{
 		private string TenNV;
 		private string CongViec;
+        private string MaNV;
 
-
-		public QuanLyHoaDonBan()
+        //private string maNV; // Khai báo biến mã nhân viên
+        //private string tenNV;
+        public QuanLyHoaDonBan()
 		{
-			InitializeComponent();
+            //this.maNV = maNV; // Gán mã nhân viên từ tham số
+            //this.tenNV = tenNV;
+            InitializeComponent();
 			LoadData();
 		}
 
-		public QuanLyHoaDonBan(string tenNV, string congViec)
+		public QuanLyHoaDonBan(string tenNV,string maNV, string congViec)
 		{
 			InitializeComponent();
 			TenNV = tenNV;   // Set user information
@@ -37,7 +41,13 @@ namespace BTL_LTTQ_VIP
 			LoadData();
 		}
 
-		private void LoadData()
+        public QuanLyHoaDonBan(string tenNV, string congViec)
+        {
+            TenNV = tenNV;
+            CongViec = congViec;
+        }
+
+        private void LoadData()
 		{
 			using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
 			{
@@ -87,12 +97,12 @@ namespace BTL_LTTQ_VIP
 
 		private void exit_Click(object sender, EventArgs e)
 		{
-			Home homeForm = new Home
-			{
-				TenNV = TenNV,
-				CongViec = CongViec
-			};
-			homeForm.Show();
+			//Home homeForm = new Home
+			//{
+			//	TenNV = TenNV,
+			//	CongViec = CongViec
+			//};
+			//homeForm.Show();
 			this.Close();
 
 		}
@@ -131,73 +141,12 @@ namespace BTL_LTTQ_VIP
 
 		private void btnThemHD_Click(object sender, EventArgs e)
 		{
-			//ThemHoaDonBan themHoaDonBanForm = new ThemHoaDonBan(false); // false để chỉ ra rằng đây là chế độ thêm
-			//themHoaDonBanForm.Show();
-			//this.Hide();
-			HoaDonBan hoaDonBan = new HoaDonBan();
-			hoaDonBan.Show();
-		}
-
-		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
-
-		private void btnXoaHD_Click(object sender, EventArgs e)
-		{
-			if (dataGridView1.SelectedRows.Count > 0)
-			{
-				DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-				string soHDB = selectedRow.Cells["SoHDB"].Value.ToString(); // "SoHDB" là tên cột chứa mã hóa đơn
-				DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
-				if (dialogResult == DialogResult.Yes)
-				{
-					using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
-					{
-						try
-						{
-							connection.Open();
-							SqlTransaction transaction = connection.BeginTransaction(); // Bắt đầu giao dịch
-
-							string deleteChiTietQuery = "DELETE FROM ChiTietHoaDonBan WHERE SoHDB = @SoHDB";
-							SqlCommand deleteChiTietCommand = new SqlCommand(deleteChiTietQuery, connection, transaction);
-							deleteChiTietCommand.Parameters.AddWithValue("@SoHDB", soHDB);
-							deleteChiTietCommand.ExecuteNonQuery();
-
-							string deleteHoaDonQuery = "DELETE FROM HoaDonBan WHERE SoHDB = @SoHDB";
-							SqlCommand deleteHoaDonCommand = new SqlCommand(deleteHoaDonQuery, connection, transaction);
-							deleteHoaDonCommand.Parameters.AddWithValue("@SoHDB", soHDB);
-							int result = deleteHoaDonCommand.ExecuteNonQuery();
-
-							if (result > 0)
-							{
-								transaction.Commit(); // Xác nhận giao dịch
-								MessageBox.Show("Xóa hóa đơn thành công.");
-								LoadData(); // Tải lại dữ liệu sau khi xóa
-							}
-							else
-							{
-								transaction.Rollback(); // Hủy giao dịch nếu không thành công
-								MessageBox.Show("Xóa hóa đơn thất bại.");
-							}
-						}
-						catch (Exception ex)
-						{
-							MessageBox.Show("Lỗi khi xóa dữ liệu: " + ex.Message);
-						}
-					}
-				}
-			}
-			else
-			{
-				MessageBox.Show("Vui lòng chọn hóa đơn cần xóa.");
-			}
-		}
-
-		private void QuanLyHoaDonBan_Load(object sender, EventArgs e)
-		{
-
-		}
+            //string maNV = "Mã nhân viên"; // lấy từ thông tin đăng nhập
+            //string tenNV = "Tên nhân viên";
+            HoaDonBan hoaDonBan = new HoaDonBan(MaNV); // Truyền mã nhân viên và tên nhân viên
+            hoaDonBan.Show();
+            //this.Hide();
+        }
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -256,6 +205,9 @@ namespace BTL_LTTQ_VIP
 		}
 
 
+		
+
+		
 
 		private void btnExportInvoice_Click_1(object sender, EventArgs e)
 		{

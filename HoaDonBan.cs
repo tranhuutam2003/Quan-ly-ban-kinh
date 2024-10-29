@@ -13,19 +13,42 @@ namespace BTL_LTTQ_VIP
 {
 	public partial class HoaDonBan : Form
 	{
-		public HoaDonBan()
-		{
+		private string maNV; // them1
+		//private string tenNV; //them1
+        public HoaDonBan(string maNV) // Chỉ cần mã nhân viên
+        {
 			InitializeComponent();
-			LoadItemsToListView();
+			this.maNV = maNV;   // Gán mã nhân viên
+            //this.tenNV = tenNV;
+            LoadItemsToListView();
 			GenerateNewSoHDB();
 			this.Load += new EventHandler(HoaDonBan_Load);
-		}
 
-		private void LoadItemsToListView()
+
+            //InitializeComponent();
+            //this.maNV = maNV;   // Gán mã nhân viên
+            //LoadItemsToListView();
+            //GenerateNewSoHDB();
+            //this.Load += new EventHandler(HoaDonBan_Load);
+        }
+        private string GetTenNV(string maNV)
+        {
+            using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
+            {
+                conn.Open();
+                string query = "SELECT TenNV FROM NhanVien WHERE MaNV = @MaNV";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaNV", maNV);
+                    return cmd.ExecuteScalar()?.ToString(); // Đảm bảo rằng maNV là kiểu đúng
+                }
+            }
+        }
+        private void LoadItemsToListView()
 		{
 			using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
 			{
-				string query = "SELECT MaHang, TenHang, DonGiaBan FROM DanhMucHangHoa WHERE IsActive = 1";
+				string query = "SELECT MaHang, TenHang, DonGiaBan FROM DanhMucHangHoa ";
 				SqlCommand cmd = new SqlCommand(query, conn);
 
 				try
@@ -77,7 +100,7 @@ namespace BTL_LTTQ_VIP
 			}
 		}
 
-		
+
 
 		private void txtSoLuong_TextChanged(object sender, EventArgs e)
 		{
@@ -112,87 +135,162 @@ namespace BTL_LTTQ_VIP
 		}
 		private void btnXacNhan_Click(object sender, EventArgs e)
 		{
-			using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
-			{
-				try
-				{
-					conn.Open();
-					SqlTransaction transaction = conn.BeginTransaction();
 
-					// Kiểm tra các tham số bắt buộc
-					if (cbMaKhach.SelectedValue == null)
-					{
-						MessageBox.Show("Vui lòng chọn khách hàng trước khi xác nhận hóa đơn.");
-						return;
-					}
+            //using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
+            //{
+            //    try
+            //    {
+            //        conn.Open();
+            //        SqlTransaction transaction = conn.BeginTransaction();
 
-					if (cbMaNV.SelectedValue == null)
-					{
-						MessageBox.Show("Vui lòng chọn nhân viên trước khi xác nhận hóa đơn.");
-						return;
-					}
-					bool hasValidItem = false;
-					foreach (ListViewItem item in listView1.Items)
-					{
-						int soLuong = string.IsNullOrEmpty(item.SubItems[2].Text) ? 0 : int.Parse(item.SubItems[2].Text);
-						if (soLuong > 0)
-						{
-							hasValidItem = true;
-							break; 
-						}
-					}
+            //        // Kiểm tra các tham số bắt buộc
+            //        if (cbMaKhach.SelectedValue == null)
+            //        {
+            //            MessageBox.Show("Vui lòng chọn khách hàng trước khi xác nhận hóa đơn.");
+            //            return;
+            //        }
 
-					if (!hasValidItem)
-					{
-						MessageBox.Show("Chưa chọn mặt hàng nào! Vui lòng chọn trước khi xác nhận.");
-						return;
-					}
-					string insertHDBQuery = "INSERT INTO HoaDonBan (SoHDB, MaNV, NgayBan, MaKhach, TongTien) " +
-											"VALUES (@SoHDB, @MaNV, @NgayBan, @MaKhach, @TongTien)";
-					SqlCommand cmdHDB = new SqlCommand(insertHDBQuery, conn, transaction);
-					cmdHDB.Parameters.AddWithValue("@SoHDB", int.Parse(txtSoHDB.Text));
-					cmdHDB.Parameters.AddWithValue("@MaNV", cbMaNV.SelectedValue);
-					cmdHDB.Parameters.AddWithValue("@NgayBan", dateTimePicker1.Value);
-					cmdHDB.Parameters.AddWithValue("@MaKhach", cbMaKhach.SelectedValue);
-					cmdHDB.Parameters.AddWithValue("@TongTien", CalculateTongTien());
+            //        // Kiểm tra các mặt hàng
+            //        bool hasValidItem = false;
+            //        foreach (ListViewItem item in listView1.Items)
+            //        {
+            //            int soLuong = string.IsNullOrEmpty(item.SubItems[2].Text) ? 0 : int.Parse(item.SubItems[2].Text);
+            //            if (soLuong > 0)
+            //            {
+            //                hasValidItem = true;
+            //                break;
+            //            }
+            //        }
 
-					cmdHDB.ExecuteNonQuery();
+            //        if (!hasValidItem)
+            //        {
+            //            MessageBox.Show("Chưa chọn mặt hàng nào! Vui lòng chọn trước khi xác nhận.");
+            //            return;
+            //        }
 
-					// Thêm chi tiết hóa đơn vào bảng ChiTietHoaDonBan
-					foreach (ListViewItem item in listView1.Items)
-					{
-						// Kiểm tra nếu Số lượng là 0, thì không thêm vào chi tiết hóa đơn
-						int soLuong = string.IsNullOrEmpty(item.SubItems[2].Text) ? 0 : int.Parse(item.SubItems[2].Text);
+            //        // Thêm hóa đơn vào bảng HoaDonBan
+            //        string insertHDBQuery = "INSERT INTO HoaDonBan (SoHDB, MaNV, NgayBan, MaKhach, TongTien) " +
+            //                                 "VALUES (@SoHDB, @MaNV, @NgayBan, @MaKhach, @TongTien)";
+            //        SqlCommand cmdHDB = new SqlCommand(insertHDBQuery, conn, transaction);
+            //        cmdHDB.Parameters.AddWithValue("@SoHDB", int.Parse(txtSoHDB.Text));
+            //        cmdHDB.Parameters.AddWithValue("@MaNV", maNV); // Sử dụng mã nhân viên
+            //        cmdHDB.Parameters.AddWithValue("@NgayBan", dateTimePicker1.Value);
+            //        cmdHDB.Parameters.AddWithValue("@MaKhach", cbMaKhach.SelectedValue);
+            //        cmdHDB.Parameters.AddWithValue("@TongTien", CalculateTongTien());
 
-						if (soLuong > 0)  
-						{
-							decimal giamGia = string.IsNullOrEmpty(item.SubItems[3].Text) ? 0 : decimal.Parse(item.SubItems[3].Text);
-							decimal thanhTien = string.IsNullOrEmpty(item.SubItems[5].Text) ? 0 : decimal.Parse(item.SubItems[5].Text);
+            //        cmdHDB.ExecuteNonQuery();
 
-							string insertCTHDBQuery = "INSERT INTO ChiTietHoaDonBan (SoHDB, MaHang, SoLuong, GiamGia, ThanhTien) " +
-													  "VALUES (@SoHDB, @MaHang, @SoLuong, @GiamGia, @ThanhTien)";
-							SqlCommand cmdCTHDB = new SqlCommand(insertCTHDBQuery, conn, transaction);
-							cmdCTHDB.Parameters.AddWithValue("@SoHDB", int.Parse(txtSoHDB.Text));
-							cmdCTHDB.Parameters.AddWithValue("@MaHang", item.SubItems[0].Text);
-							cmdCTHDB.Parameters.AddWithValue("@SoLuong", soLuong);
-							cmdCTHDB.Parameters.AddWithValue("@GiamGia", giamGia);
-							cmdCTHDB.Parameters.AddWithValue("@ThanhTien", thanhTien);
-							cmdCTHDB.ExecuteNonQuery();
-						}
-					}
+            //        // Thêm chi tiết hóa đơn vào bảng ChiTietHoaDonBan
+            //        foreach (ListViewItem item in listView1.Items)
+            //        {
+            //            // Kiểm tra nếu Số lượng là 0, thì không thêm vào chi tiết hóa đơn
+            //            int soLuong = string.IsNullOrEmpty(item.SubItems[2].Text) ? 0 : int.Parse(item.SubItems[2].Text);
 
-					// Commit transaction
-					transaction.Commit();
-					MessageBox.Show("Hóa đơn đã được cập nhật thành công!");
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Lỗi khi cập nhật hóa đơn: " + ex.Message);
-				}
-			}
+            //            if (soLuong > 0)
+            //            {
+            //                decimal giamGia = string.IsNullOrEmpty(item.SubItems[3].Text) ? 0 : decimal.Parse(item.SubItems[3].Text);
+            //                decimal thanhTien = string.IsNullOrEmpty(item.SubItems[5].Text) ? 0 : decimal.Parse(item.SubItems[5].Text);
 
-			
-		}
+            //                string insertCTHDBQuery = "INSERT INTO ChiTietHoaDonBan (SoHDB, MaHang, SoLuong, GiamGia, ThanhTien) " +
+            //                                           "VALUES (@SoHDB, @MaHang, @SoLuong, @GiamGia, @ThanhTien)";
+            //                SqlCommand cmdCTHDB = new SqlCommand(insertCTHDBQuery, conn, transaction);
+            //                cmdCTHDB.Parameters.AddWithValue("@SoHDB", int.Parse(txtSoHDB.Text));
+            //                cmdCTHDB.Parameters.AddWithValue("@MaHang", item.SubItems[0].Text);
+            //                cmdCTHDB.Parameters.AddWithValue("@SoLuong", soLuong);
+            //                cmdCTHDB.Parameters.AddWithValue("@GiamGia", giamGia);
+            //                cmdCTHDB.Parameters.AddWithValue("@ThanhTien", thanhTien);
+            //                cmdCTHDB.ExecuteNonQuery();
+            //            }
+            //        }
+
+            //        // Commit transaction
+            //        transaction.Commit();
+            //        MessageBox.Show("Hóa đơn đã được cập nhật thành công!");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Lỗi khi cập nhật hóa đơn: " + ex.Message);
+            //    }
+            //}
+
+
+            using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    // Kiểm tra các tham số bắt buộc
+                    if (cbMaKhach.SelectedValue == null)
+                    {
+                        MessageBox.Show("Vui lòng chọn khách hàng trước khi xác nhận hóa đơn.");
+                        return;
+                    }
+
+                    // Kiểm tra các mặt hàng
+                    bool hasValidItem = false;
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        int soLuong = string.IsNullOrEmpty(item.SubItems[2].Text) ? 0 : int.Parse(item.SubItems[2].Text);
+                        if (soLuong > 0)
+                        {
+                            hasValidItem = true;
+                            break;
+                        }
+                    }
+
+                    if (!hasValidItem)
+                    {
+                        MessageBox.Show("Chưa chọn mặt hàng nào! Vui lòng chọn trước khi xác nhận.");
+                        return;
+                    }
+
+                    // Thêm hóa đơn vào bảng HoaDonBan
+                    string insertHDBQuery = "INSERT INTO HoaDonBan (SoHDB, MaNV, NgayBan, MaKhach, TongTien) " +
+                                             "VALUES (@SoHDB, @MaNV, @NgayBan, @MaKhach, @TongTien)";
+                    SqlCommand cmdHDB = new SqlCommand(insertHDBQuery, conn, transaction);
+                    cmdHDB.Parameters.AddWithValue("@SoHDB", int.Parse(txtSoHDB.Text));
+                    cmdHDB.Parameters.AddWithValue("@MaNV", maNV); // Sử dụng mã nhân viên
+                    cmdHDB.Parameters.AddWithValue("@NgayBan", dateTimePicker1.Value);
+                    cmdHDB.Parameters.AddWithValue("@MaKhach", cbMaKhach.SelectedValue);
+                    cmdHDB.Parameters.AddWithValue("@TongTien", CalculateTongTien());
+
+                    cmdHDB.ExecuteNonQuery();
+
+                    // Thêm chi tiết hóa đơn vào bảng ChiTietHoaDonBan
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        // Kiểm tra nếu Số lượng là 0, thì không thêm vào chi tiết hóa đơn
+                        int soLuong = string.IsNullOrEmpty(item.SubItems[2].Text) ? 0 : int.Parse(item.SubItems[2].Text);
+
+                        if (soLuong > 0)
+                        {
+                            decimal giamGia = string.IsNullOrEmpty(item.SubItems[3].Text) ? 0 : decimal.Parse(item.SubItems[3].Text);
+                            decimal thanhTien = string.IsNullOrEmpty(item.SubItems[5].Text) ? 0 : decimal.Parse(item.SubItems[5].Text);
+
+                            string insertCTHDBQuery = "INSERT INTO ChiTietHoaDonBan (SoHDB, MaHang, SoLuong, GiamGia, ThanhTien) " +
+                                                       "VALUES (@SoHDB, @MaHang, @SoLuong, @GiamGia, @ThanhTien)";
+                            SqlCommand cmdCTHDB = new SqlCommand(insertCTHDBQuery, conn, transaction);
+                            cmdCTHDB.Parameters.AddWithValue("@SoHDB", int.Parse(txtSoHDB.Text));
+                            cmdCTHDB.Parameters.AddWithValue("@MaHang", item.SubItems[0].Text);
+                            cmdCTHDB.Parameters.AddWithValue("@SoLuong", soLuong);
+                            cmdCTHDB.Parameters.AddWithValue("@GiamGia", giamGia);
+                            cmdCTHDB.Parameters.AddWithValue("@ThanhTien", thanhTien);
+                            cmdCTHDB.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Commit transaction
+                    transaction.Commit();
+                    MessageBox.Show("Hóa đơn đã được cập nhật thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi cập nhật hóa đơn: " + ex.Message);
+                }
+            }
+        }
 		private void UpdateThanhTien()
 		{
 			if (listView1.SelectedItems.Count > 0)
@@ -239,37 +337,15 @@ namespace BTL_LTTQ_VIP
 			}
 		}
 
-		private void cbMaNV_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-		private void LoadNhanVienToComboBox()
-		{
-			using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
-			{
-				string query = "SELECT MaNV, TenNV FROM NhanVien WHERE IsActive = 1"; // Chỉ chọn nhân viên đang hoạt động
-				SqlDataAdapter da = new SqlDataAdapter(query, conn);
-				DataTable dt = new DataTable();
-				da.Fill(dt);
-
-				// Gán dữ liệu vào ComboBox
-				cbMaNV.DataSource = dt;
-				cbMaNV.DisplayMember = "TenNV";  // Hiển thị tên nhân viên
-				cbMaNV.ValueMember = "MaNV";     // Giá trị là mã nhân viên
-
-				// Kiểm tra dữ liệu đã nạp
-				if (cbMaNV.SelectedValue != null)
-				{
-					//MessageBox.Show("SelectedValue của ComboBox MaNV: " + cbMaNV.SelectedValue.ToString());
-				}
-			}
-		}
-
+		
+		
 		private void HoaDonBan_Load(object sender, EventArgs e)
 		{
 			LoadKhachHangToComboBox();
-			LoadNhanVienToComboBox();
-		}
+            txtMaNV.Text = maNV;   // them 1
+            txtTenNV.Text = tenNV;
+
+        }
 
 		private void btnBack_Click(object sender, EventArgs e)
 		{
@@ -277,5 +353,8 @@ namespace BTL_LTTQ_VIP
 			quanLyHoaDonBan.Show();
 			this.Close();
 		}
-	}
+
+       
+
+    }
 }

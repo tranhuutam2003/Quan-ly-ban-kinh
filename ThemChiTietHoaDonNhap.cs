@@ -20,7 +20,7 @@ namespace BTL_LTTQ_VIP
 		}
 
 		// Constructor cho chế độ chỉnh sửa
-		public ThemChiTietHoaDonNhap(bool isEditMode, string soHDN, int maHang, int soLuong, decimal donGia, decimal giamGia, decimal thanhTien, DateTime ngayNhap, int maNV)
+		public ThemChiTietHoaDonNhap(bool isEditMode, string soHDN, int maHang,int maNCC, int soLuong, decimal donGia, decimal giamGia, decimal thanhTien, DateTime ngayNhap, int maNV)
 		{
 			InitializeComponent();
 
@@ -34,6 +34,7 @@ namespace BTL_LTTQ_VIP
 
 				// Điền thông tin vào các trường nhập liệu
 				txtSoHDN.Text = soHDN;
+				txtMaNCC.Text = maNCC.ToString();
 				txtMaHang.Text = maHang.ToString();
 				txtSoLuong.Text = soLuong.ToString();
 				txtDonGia.Text = donGia.ToString();
@@ -259,10 +260,15 @@ namespace BTL_LTTQ_VIP
 		// Sự kiện nút hủy
 		private void btnBack_Click(object sender, EventArgs e)
 		{
-			QuanLyHoaDonNhap quanLyHoaDonNhap = new QuanLyHoaDonNhap();
-			quanLyHoaDonNhap.Show();
+			//QuanLyHoaDonNhap quanLyHoaDonNhap = new QuanLyHoaDonNhap();
+			//quanLyHoaDonNhap.Show();
 
 			this.Hide();
 		}
-	}
+
+        private void ThemChiTietHoaDonNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

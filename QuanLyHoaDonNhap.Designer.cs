@@ -48,7 +48,6 @@
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(1305, 384);
 			this.dataGridView1.TabIndex = 0;
-			//this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
 			this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
 			// 
 			// button4
@@ -69,7 +68,7 @@
 			this.exit.TabIndex = 9;
 			this.exit.Text = "Quay lại";
 			this.exit.UseVisualStyleBackColor = true;
-
+			this.exit.Click += new System.EventHandler(this.exit_Click_1);
 			// 
 			// button3
 			// 
@@ -114,7 +113,6 @@
 			this.Controls.Add(this.dataGridView1);
 			this.Name = "QuanLyHoaDonNhap";
 			this.Text = "QuanLyHoaDonNhap";
-
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
