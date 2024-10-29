@@ -183,7 +183,10 @@ namespace BTL_LTTQ_VIP
 
 					// Commit transaction
 					transaction.Commit();
-					MessageBox.Show("Hóa đơn đã được cập nhật thành công!");
+
+                    AddNotification(cbMaNV.SelectedValue.ToString(), "hóa đơn bán");
+
+                    MessageBox.Show("Hóa đơn đã được cập nhật thành công!");
 				}
 				catch (Exception ex)
 				{
@@ -271,7 +274,24 @@ namespace BTL_LTTQ_VIP
 			LoadNhanVienToComboBox();
 		}
 
-		private void btnBack_Click(object sender, EventArgs e)
+        private void AddNotification(string maNV, string action)
+        {
+            string query = "INSERT INTO ThongBao (NguoiNhan, NoiDung, NgayTao) VALUES (@NguoiNhan, @NoiDung, @NgayTao)";
+            string noiDung = $"{maNV} đã tạo {action} vào ngày {DateTime.Now:dd/MM/yyyy HH:mm}";
+
+            using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@NguoiNhan", maNV);
+                cmd.Parameters.AddWithValue("@NoiDung", noiDung);
+                cmd.Parameters.AddWithValue("@NgayTao", DateTime.Now);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}

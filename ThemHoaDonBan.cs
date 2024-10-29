@@ -201,7 +201,8 @@ namespace BTL_LTTQ_VIP
 					MessageBox.Show("Thêm hóa đơn thành công!");
 				}
 			}
-		}
+            AddNotification(maNV, "hóa đơn bán");
+        }
 		private bool CheckMaKhachExists(string maKhach)
 		{
 			string query = "SELECT COUNT(*) FROM KhachHang WHERE MaKhach = @MaKhach";
@@ -287,6 +288,23 @@ namespace BTL_LTTQ_VIP
 				}
 			}
 		}
-	}
+
+        private void AddNotification(string maNV, string action)
+        {
+            string query = "INSERT INTO ThongBao (NguoiNhan, NoiDung, NgayTao) VALUES (@NguoiNhan, @NoiDung, @NgayTao)";
+            string noiDung = $"{maNV} đã tạo {action} vào ngày {DateTime.Now:dd/MM/yyyy HH:mm}";
+
+            using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@NguoiNhan", maNV);
+                cmd.Parameters.AddWithValue("@NoiDung", noiDung);
+                cmd.Parameters.AddWithValue("@NgayTao", DateTime.Now);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
 }
 

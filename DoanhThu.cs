@@ -64,6 +64,9 @@ namespace BTL_LTTQ_VIP
                 lblTongDoanhThuNhap.Text = "Tổng Chi Phí Nhập: " + totalDoanhThuNhap.ToString("N2");
                 lblTongDoanhThuThuan.Text = "Doanh Thu Thuần: " + totalDoanhThuThuan.ToString("N2");
             }
+            ChiTietDoanhThu ctdt = new ChiTietDoanhThu(tuNgay, denNgay);
+            ctdt.Show();
+
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -81,6 +84,11 @@ namespace BTL_LTTQ_VIP
         {
             DoanhThuTheoThang dttt = new DoanhThuTheoThang();
             dttt.Show();
+        }
+
+        private void DoanhThu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

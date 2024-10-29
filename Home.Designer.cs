@@ -40,9 +40,10 @@
             this.QLNCC = new System.Windows.Forms.Button();
             this.QLDMHH = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btndoanhthu = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grbthongbao = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.rspass = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btndoanhthu = new System.Windows.Forms.Button();
             this.plTenNV.SuspendLayout();
             this.plCV.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -204,6 +204,17 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 275);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
+            // btndoanhthu
+            // 
+            this.btndoanhthu.Location = new System.Drawing.Point(3, 236);
+            this.btndoanhthu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btndoanhthu.Name = "btndoanhthu";
+            this.btndoanhthu.Size = new System.Drawing.Size(150, 35);
+            this.btndoanhthu.TabIndex = 20;
+            this.btndoanhthu.Text = "Doanh Thu";
+            this.btndoanhthu.UseVisualStyleBackColor = true;
+            this.btndoanhthu.Click += new System.EventHandler(this.btndoanhthu_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
@@ -218,7 +229,7 @@
             // panel2
             // 
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.groupBox4);
+            this.panel2.Controls.Add(this.grbthongbao);
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.MenuQL);
             this.panel2.Controls.Add(this.groupBox1);
@@ -230,14 +241,14 @@
             this.panel2.TabIndex = 14;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // groupBox4
+            // grbthongbao
             // 
-            this.groupBox4.Location = new System.Drawing.Point(233, 204);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(586, 336);
-            this.groupBox4.TabIndex = 19;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Thông báo";
+            this.grbthongbao.Location = new System.Drawing.Point(233, 204);
+            this.grbthongbao.Name = "grbthongbao";
+            this.grbthongbao.Size = new System.Drawing.Size(586, 336);
+            this.grbthongbao.TabIndex = 19;
+            this.grbthongbao.TabStop = false;
+            this.grbthongbao.Text = "Thông báo";
             // 
             // groupBox3
             // 
@@ -399,17 +410,6 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
-            // btndoanhthu
-            // 
-            this.btndoanhthu.Location = new System.Drawing.Point(3, 236);
-            this.btndoanhthu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btndoanhthu.Name = "btndoanhthu";
-            this.btndoanhthu.Size = new System.Drawing.Size(150, 35);
-            this.btndoanhthu.TabIndex = 20;
-            this.btndoanhthu.Text = "Doanh Thu";
-            this.btndoanhthu.UseVisualStyleBackColor = true;
-            this.btndoanhthu.Click += new System.EventHandler(this.btndoanhthu_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -460,7 +460,7 @@
         private System.Windows.Forms.GroupBox MenuQL;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox grbthongbao;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

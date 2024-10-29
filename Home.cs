@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -80,19 +81,17 @@ namespace BTL_LTTQ_VIP
             this.Close();
         }
 
-        private void Home_Load()
-        {
-            
-        }
-
         private void Home_Load(object sender, EventArgs e)
         {
+
             UpdateUI();
+            LoadThongBao();
         }
 
         public void UpdateUI()
         {
-                lbTenNV.Text = TenNV ?? "Không có tên";
+
+            lbTenNV.Text = TenNV ?? "Không có tên";
                 lbCV.Text = CongViec ?? "Không có công việc";
 
             if (CongViec == "Nhân viên bán hàng")
@@ -161,6 +160,97 @@ namespace BTL_LTTQ_VIP
             DoanhThu dt = new DoanhThu(TenNV, CongViec);
             dt.Show();
             this.Hide();
+        }
+
+        private void LoadThongBao()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
+                {
+                    conn.Open();
+
+                    // Truy vấn để lấy thông tin nhân viên
+                    string getUserInfoQuery = "SELECT nv.MaNV, cv.TenCV FROM NhanVien nv " +
+                                               "JOIN CongViec cv ON nv.MaCV = cv.MaCV " +
+                                               "WHERE nv.TenNV = @TenNV";
+
+                    int maNV = -1;
+                    bool isManager = false;
+
+                    using (SqlCommand cmdGetInfo = new SqlCommand(getUserInfoQuery, conn))
+                    {
+                        // Khai báo tham số đúng cách
+                        cmdGetInfo.Parameters.AddWithValue("@TenNV", TenNV);
+
+                        using (SqlDataReader reader = cmdGetInfo.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                maNV = Convert.ToInt32(reader["MaNV"]);
+                                isManager = reader["TenCV"].ToString().Equals("Quản lý", StringComparison.OrdinalIgnoreCase);
+                            }
+                        }
+                    }
+
+                    if (maNV == -1)
+                    {
+                        MessageBox.Show($"Không tìm thấy thông tin nhân viên: {TenNV}");
+                        return;
+                    }
+
+                    // Câu truy vấn lấy thông báo
+                    string notificationQuery;
+                    if (isManager)
+                    {
+                        notificationQuery = "SELECT NoiDung, NgayTao FROM ThongBao ORDER BY NgayTao DESC";
+                    }
+                    else
+                    {
+                        notificationQuery = "SELECT NoiDung, NgayTao FROM ThongBao WHERE NguoiNhan = @MaNV OR NguoiNhan IS NULL ORDER BY NgayTao DESC";
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand(notificationQuery, conn))
+                    {
+                        if (!isManager)
+                        {
+                            cmd.Parameters.Add("@MaNV", SqlDbType.Int).Value = maNV;
+                        }
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            grbthongbao.Controls.Clear(); // Xóa các điều khiển hiện có
+                            int yOffset = 20;
+
+                            while (reader.Read())
+                            {
+                                string noiDung = reader["NoiDung"].ToString();
+                                DateTime ngayTao = Convert.ToDateTime(reader["NgayTao"]);
+
+                                Label lblThongBao = new Label
+                                {
+                                    Text = $"{noiDung} - Ngày: {ngayTao:dd/MM/yyyy HH:mm}",
+                                    AutoSize = true,
+                                    Location = new Point(10, yOffset),
+                                    MaximumSize = new Size(grbthongbao.Width - 20, 0),
+                                    AutoEllipsis = true
+                                };
+
+                                grbthongbao.Controls.Add(lblThongBao);
+                                yOffset += lblThongBao.Height + 5; // Cập nhật vị trí Y cho thông báo tiếp theo
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Lỗi kết nối cơ sở dữ liệu: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
+            }
         }
     }
 }

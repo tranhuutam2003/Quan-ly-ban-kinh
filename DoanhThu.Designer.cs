@@ -114,6 +114,7 @@
             this.lblTongDoanhThuBan.Size = new System.Drawing.Size(140, 16);
             this.lblTongDoanhThuBan.TabIndex = 7;
             this.lblTongDoanhThuBan.Text = "lblTongDoanhThuBan";
+            this.lblTongDoanhThuBan.Visible = false;
             // 
             // lblTongDoanhThuNhap
             // 
@@ -123,6 +124,7 @@
             this.lblTongDoanhThuNhap.Size = new System.Drawing.Size(149, 16);
             this.lblTongDoanhThuNhap.TabIndex = 8;
             this.lblTongDoanhThuNhap.Text = "lblTongDoanhThuNhap";
+            this.lblTongDoanhThuNhap.Visible = false;
             // 
             // lblTongDoanhThuThuan
             // 
@@ -132,6 +134,7 @@
             this.lblTongDoanhThuThuan.Size = new System.Drawing.Size(154, 16);
             this.lblTongDoanhThuThuan.TabIndex = 9;
             this.lblTongDoanhThuThuan.Text = "lblTongDoanhThuThuan";
+            this.lblTongDoanhThuThuan.Visible = false;
             // 
             // btnxemdoanhthutheothang
             // 
@@ -161,6 +164,7 @@
             this.Controls.Add(this.dtpngayketthuc);
             this.Name = "DoanhThu";
             this.Text = "DoanhThu";
+            this.Load += new System.EventHandler(this.DoanhThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
