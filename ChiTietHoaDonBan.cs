@@ -46,11 +46,6 @@ namespace BTL_LTTQ_VIP
 
 		private void Quaylai_Click(object sender, EventArgs e)
 		{
-
-			QuanLyHoaDonBan quanLyHoaDonBan = new QuanLyHoaDonBan();
-			quanLyHoaDonBan.StartPosition = FormStartPosition.Manual;
-			quanLyHoaDonBan.Location = this.Location;
-			quanLyHoaDonBan.Show();
 			this.Close();
 		}
 

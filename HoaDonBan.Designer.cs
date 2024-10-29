@@ -48,9 +48,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.txtTenNV = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.cbMaNV = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -215,38 +213,20 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // txtMaNV
+            // cbMaNV
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(373, 66);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(100, 22);
-            this.txtMaNV.TabIndex = 20;
-            // 
-            // txtTenNV
-            // 
-            this.txtTenNV.Location = new System.Drawing.Point(373, 104);
-            this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.ReadOnly = true;
-            this.txtTenNV.Size = new System.Drawing.Size(200, 22);
-            this.txtTenNV.TabIndex = 21;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(219, 110);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 16);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Tên Nhân Viên";
+            this.cbMaNV.FormattingEnabled = true;
+            this.cbMaNV.Location = new System.Drawing.Point(373, 86);
+            this.cbMaNV.Name = "cbMaNV";
+            this.cbMaNV.Size = new System.Drawing.Size(121, 24);
+            this.cbMaNV.TabIndex = 20;
             // 
             // HoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 672);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtTenNV);
-            this.Controls.Add(this.txtMaNV);
+            this.Controls.Add(this.cbMaNV);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.label7);
@@ -291,8 +271,6 @@
 		private System.Windows.Forms.ColumnHeader columnHeader8;
 		private System.Windows.Forms.ColumnHeader columnHeader9;
 		private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.TextBox txtTenNV;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbMaNV;
     }
 }

@@ -309,6 +309,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietDoanhThu.Designer.cs">
+      <DependentUpon>ChiTietDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietHoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,17 +333,17 @@
     <Compile Include="Account.Designer.cs">
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaDonBan.cs">
+    <Compile Include="DoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoaDonBan.Designer.cs">
-      <DependentUpon>HoaDonBan.cs</DependentUpon>
+    <Compile Include="DoanhThu.Designer.cs">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaDonNhap.cs">
+    <Compile Include="DoanhThuTheoThang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoaDonNhap.Designer.cs">
-      <DependentUpon>HoaDonNhap.cs</DependentUpon>
+    <Compile Include="DoanhThuTheoThang.Designer.cs">
+      <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
     </Compile>
     <Compile Include="HoaDonBan.cs">
       <SubType>Form</SubType>
@@ -431,6 +437,7 @@
     <Compile Include="SuaNV.Designer.cs">
       <DependentUpon>SuaNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="System\Windows\Forms\DataVisualization.cs" />
     <Compile Include="ThemChatLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -536,11 +543,20 @@
     <EmbeddedResource Include="Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietDoanhThu.resx">
+      <DependentUpon>ChiTietDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChiTietHoaDonBan.resx">
       <DependentUpon>ChiTietHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChiTietHoaDonNhap.resx">
       <DependentUpon>ChiTietHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhThu.resx">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhThuTheoThang.resx">
+      <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDonBan.resx">
       <DependentUpon>HoaDonBan.cs</DependentUpon>

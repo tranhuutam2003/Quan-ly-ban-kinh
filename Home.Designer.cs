@@ -1,33 +1,33 @@
 ﻿namespace BTL_LTTQ_VIP
 {
-	partial class Home
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class Home
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.jj = new System.Windows.Forms.Label();
             this.plTenNV = new System.Windows.Forms.Panel();
             this.lbTenNV = new System.Windows.Forms.Label();
@@ -40,11 +40,10 @@
             this.QLNCC = new System.Windows.Forms.Button();
             this.QLDMHH = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btndoanhthu = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtDoanhThu = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grbthongbao = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.rspass = new System.Windows.Forms.Button();
@@ -201,10 +200,22 @@
             this.flowLayoutPanel1.Controls.Add(this.QLKH);
             this.flowLayoutPanel1.Controls.Add(this.QLHDB);
             this.flowLayoutPanel1.Controls.Add(this.QLNV);
+            this.flowLayoutPanel1.Controls.Add(this.btndoanhthu);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 25);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(183, 234);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 275);
             this.flowLayoutPanel1.TabIndex = 12;
+            // 
+            // btndoanhthu
+            // 
+            this.btndoanhthu.Location = new System.Drawing.Point(3, 236);
+            this.btndoanhthu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btndoanhthu.Name = "btndoanhthu";
+            this.btndoanhthu.Size = new System.Drawing.Size(150, 35);
+            this.btndoanhthu.TabIndex = 20;
+            this.btndoanhthu.Text = "Doanh Thu";
+            this.btndoanhthu.UseVisualStyleBackColor = true;
+            this.btndoanhthu.Click += new System.EventHandler(this.btndoanhthu_Click);
             // 
             // panel1
             // 
@@ -220,9 +231,7 @@
             // panel2
             // 
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.txtDoanhThu);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.groupBox4);
+            this.panel2.Controls.Add(this.grbthongbao);
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.MenuQL);
             this.panel2.Controls.Add(this.groupBox1);
@@ -234,31 +243,14 @@
             this.panel2.TabIndex = 14;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // txtDoanhThu
+            // grbthongbao
             // 
-            this.txtDoanhThu.Location = new System.Drawing.Point(233, 128);
-            this.txtDoanhThu.Name = "txtDoanhThu";
-            this.txtDoanhThu.ReadOnly = true;
-            this.txtDoanhThu.Size = new System.Drawing.Size(196, 22);
-            this.txtDoanhThu.TabIndex = 21;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(230, 109);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 16);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Tổng doanh thu";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Location = new System.Drawing.Point(233, 204);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(586, 336);
-            this.groupBox4.TabIndex = 19;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Thông báo";
+            this.grbthongbao.Location = new System.Drawing.Point(233, 204);
+            this.grbthongbao.Name = "grbthongbao";
+            this.grbthongbao.Size = new System.Drawing.Size(586, 336);
+            this.grbthongbao.TabIndex = 19;
+            this.grbthongbao.TabStop = false;
+            this.grbthongbao.Text = "Thông báo";
             // 
             // groupBox3
             // 
@@ -305,7 +297,7 @@
             this.MenuQL.Controls.Add(this.flowLayoutPanel1);
             this.MenuQL.Location = new System.Drawing.Point(7, 88);
             this.MenuQL.Name = "MenuQL";
-            this.MenuQL.Size = new System.Drawing.Size(193, 265);
+            this.MenuQL.Size = new System.Drawing.Size(170, 306);
             this.MenuQL.TabIndex = 17;
             this.MenuQL.TabStop = false;
             this.MenuQL.Text = "Menu";
@@ -449,41 +441,40 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
-		}
+        }
 
-		#endregion
-		private System.Windows.Forms.Label jj;
-		private System.Windows.Forms.Panel plTenNV;
-		private System.Windows.Forms.Panel plCV;
-		private System.Windows.Forms.Label lbTenNV;
-		private System.Windows.Forms.Label lbCV;
-		private System.Windows.Forms.Button QLNV;
-		private System.Windows.Forms.Button QLKH;
-		private System.Windows.Forms.Button QLHDB;
-		private System.Windows.Forms.Button QLHDN;
-		private System.Windows.Forms.Button QLNCC;
-		private System.Windows.Forms.Button QLDMHH;
-		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-		private System.Windows.Forms.Button exit;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.GroupBox groupBox3;
-		private System.Windows.Forms.Button rspass;
-		private System.Windows.Forms.GroupBox MenuQL;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.GroupBox groupBox4;
-		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button4;
-		private System.Windows.Forms.Button button5;
-		private System.Windows.Forms.Button button6;
-		private System.Windows.Forms.Button button7;
-		private System.ComponentModel.BackgroundWorker backgroundWorker1;
-		private System.Windows.Forms.TextBox txtDoanhThu;
-		private System.Windows.Forms.Label label2;
-	}
+        #endregion
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel plTenNV;
+        private System.Windows.Forms.Panel plCV;
+        private System.Windows.Forms.Label lbTenNV;
+        private System.Windows.Forms.Label lbCV;
+        private System.Windows.Forms.Button QLNV;
+        private System.Windows.Forms.Button QLKH;
+        private System.Windows.Forms.Button QLHDB;
+        private System.Windows.Forms.Button QLHDN;
+        private System.Windows.Forms.Button QLNCC;
+        private System.Windows.Forms.Button QLDMHH;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button rspass;
+        private System.Windows.Forms.GroupBox MenuQL;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox grbthongbao;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btndoanhthu;
+    }
 }
