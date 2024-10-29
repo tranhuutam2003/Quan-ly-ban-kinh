@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.jj = new System.Windows.Forms.Label();
+            //this.jj = new System.Windows.Forms.Label();
             this.plTenNV = new System.Windows.Forms.Panel();
             this.lbTenNV = new System.Windows.Forms.Label();
             this.plCV = new System.Windows.Forms.Panel();
@@ -75,15 +75,15 @@
             // 
             // jj
             // 
-            this.jj.AutoSize = true;
-            this.jj.Font = new System.Drawing.Font("Microsoft Tai Le", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jj.Location = new System.Drawing.Point(133, -3);
-            this.jj.Name = "jj";
-            this.jj.Size = new System.Drawing.Size(484, 77);
-            this.jj.TabIndex = 8;
-            this.jj.Text = "Quản lý bán kính";
-            this.jj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.jj.Click += new System.EventHandler(this.label1_Click);
+            //this.jj.AutoSize = true;
+            //this.jj.Font = new System.Drawing.Font("Microsoft Tai Le", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.jj.Location = new System.Drawing.Point(133, -3);
+            //this.jj.Name = "jj";
+            //this.jj.Size = new System.Drawing.Size(484, 77);
+            //this.jj.TabIndex = 8;
+            //this.jj.Text = "Quản lý bán kính";
+            //this.jj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //this.jj.Click += new System.EventHandler(this.label1_Click);
             // 
             // plTenNV
             // 
@@ -94,7 +94,7 @@
             this.plTenNV.Name = "plTenNV";
             this.plTenNV.Size = new System.Drawing.Size(152, 74);
             this.plTenNV.TabIndex = 10;
-            this.plTenNV.Paint += new System.Windows.Forms.PaintEventHandler(this.plTenNV_Paint);
+            //this.plTenNV.Paint += new System.Windows.Forms.PaintEventHandler(this.plTenNV_Paint);
             // 
             // lbTenNV
             // 
@@ -105,7 +105,7 @@
             this.lbTenNV.TabIndex = 0;
             this.lbTenNV.Text = "label2";
             this.lbTenNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbTenNV.Click += new System.EventHandler(this.lbTenNV_Click);
+            //this.lbTenNV.Click += new System.EventHandler(this.lbTenNV_Click);
             // 
             // plCV
             // 
@@ -222,7 +222,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.plCV);
             this.panel1.Controls.Add(this.plTenNV);
-            this.panel1.Controls.Add(this.jj);
+            //this.panel1.Controls.Add(this.jj);
             this.panel1.Location = new System.Drawing.Point(166, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(926, 74);
@@ -301,7 +301,7 @@
             this.MenuQL.TabIndex = 17;
             this.MenuQL.TabStop = false;
             this.MenuQL.Text = "Menu";
-            this.MenuQL.Enter += new System.EventHandler(this.MenuQL_Enter);
+            //this.MenuQL.Enter += new System.EventHandler(this.MenuQL_Enter);
             // 
             // groupBox1
             // 
@@ -357,7 +357,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "Thêm nhân viên";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            //this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -368,7 +368,7 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "Tìm kiếm nhân viên";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            //this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
