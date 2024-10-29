@@ -437,7 +437,6 @@
     <Compile Include="SuaNV.Designer.cs">
       <DependentUpon>SuaNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="System\Windows\Forms\DataVisualization.cs" />
     <Compile Include="ThemChatLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -687,6 +686,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\Windows\Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
