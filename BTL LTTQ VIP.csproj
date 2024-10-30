@@ -252,6 +252,12 @@
     <Compile Include="ThemNV.Designer.cs">
       <DependentUpon>ThemNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimSanPham,.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimSanPham,.Designer.cs">
+      <DependentUpon>TimSanPham,.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
     </EmbeddedResource>
@@ -355,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemNV.resx">
       <DependentUpon>ThemNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimSanPham,.resx">
+      <DependentUpon>TimSanPham,.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

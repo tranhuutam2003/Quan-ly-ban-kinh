@@ -40,6 +40,7 @@
             this.QLNCC = new System.Windows.Forms.Button();
             this.QLDMHH = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btndoanhthu = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -59,7 +60,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btndoanhthu = new System.Windows.Forms.Button();
             this.plTenNV.SuspendLayout();
             this.plCV.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -204,6 +204,17 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(160, 275);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
+            // btndoanhthu
+            // 
+            this.btndoanhthu.Location = new System.Drawing.Point(3, 236);
+            this.btndoanhthu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btndoanhthu.Name = "btndoanhthu";
+            this.btndoanhthu.Size = new System.Drawing.Size(150, 35);
+            this.btndoanhthu.TabIndex = 20;
+            this.btndoanhthu.Text = "Doanh Thu";
+            this.btndoanhthu.UseVisualStyleBackColor = true;
+            this.btndoanhthu.Click += new System.EventHandler(this.btndoanhthu_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
@@ -238,6 +249,7 @@
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông báo";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // groupBox3
             // 
@@ -333,6 +345,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Tìm kiếm sản phẩm";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -398,17 +411,6 @@
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
-            // btndoanhthu
-            // 
-            this.btndoanhthu.Location = new System.Drawing.Point(3, 236);
-            this.btndoanhthu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btndoanhthu.Name = "btndoanhthu";
-            this.btndoanhthu.Size = new System.Drawing.Size(150, 35);
-            this.btndoanhthu.TabIndex = 20;
-            this.btndoanhthu.Text = "Doanh Thu";
-            this.btndoanhthu.UseVisualStyleBackColor = true;
-            this.btndoanhthu.Click += new System.EventHandler(this.btndoanhthu_Click);
             // 
             // Home
             // 

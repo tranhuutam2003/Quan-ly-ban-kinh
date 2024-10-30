@@ -162,5 +162,16 @@ namespace BTL_LTTQ_VIP
             dt.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TimSanPham timSanPham = new TimSanPham();
+            timSanPham.Show();
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
