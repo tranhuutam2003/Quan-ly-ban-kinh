@@ -252,5 +252,12 @@ namespace BTL_LTTQ_VIP
                 MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TimSanPham timSanPham = new TimSanPham();
+            timSanPham.ShowDialog();
+
+        }
     }
 }
