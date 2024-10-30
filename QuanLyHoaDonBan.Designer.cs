@@ -33,6 +33,7 @@
             this.btnXoaHD = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
             this.btnXemChiTiet = new System.Windows.Forms.Button();
+            this.btnExportInvoice = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             this.btnThemHD.Location = new System.Drawing.Point(51, 477);
             this.btnThemHD.Name = "btnThemHD";
-            this.btnThemHD.Size = new System.Drawing.Size(125, 30);
+            this.btnThemHD.Size = new System.Drawing.Size(156, 49);
             this.btnThemHD.TabIndex = 1;
             this.btnThemHD.Text = "Thêm Hóa Đơn";
             this.btnThemHD.UseVisualStyleBackColor = true;
@@ -64,7 +65,7 @@
             // 
             this.btnXoaHD.Location = new System.Drawing.Point(545, 477);
             this.btnXoaHD.Name = "btnXoaHD";
-            this.btnXoaHD.Size = new System.Drawing.Size(125, 30);
+            this.btnXoaHD.Size = new System.Drawing.Size(156, 49);
             this.btnXoaHD.TabIndex = 3;
             this.btnXoaHD.Text = "Xóa Hóa Đơn";
             this.btnXoaHD.UseVisualStyleBackColor = true;
@@ -74,7 +75,7 @@
             // 
             this.exit.Location = new System.Drawing.Point(793, 477);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(125, 30);
+            this.exit.Size = new System.Drawing.Size(156, 49);
             this.exit.TabIndex = 4;
             this.exit.Text = "Quay lại";
             this.exit.UseVisualStyleBackColor = true;
@@ -84,17 +85,28 @@
             // 
             this.btnXemChiTiet.Location = new System.Drawing.Point(309, 477);
             this.btnXemChiTiet.Name = "btnXemChiTiet";
-            this.btnXemChiTiet.Size = new System.Drawing.Size(125, 30);
+            this.btnXemChiTiet.Size = new System.Drawing.Size(156, 49);
             this.btnXemChiTiet.TabIndex = 5;
             this.btnXemChiTiet.Text = "Xem Chi Tiết Hóa Đơn";
             this.btnXemChiTiet.UseVisualStyleBackColor = true;
             this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
+            // 
+            // btnExportInvoice
+            // 
+            this.btnExportInvoice.Location = new System.Drawing.Point(439, 566);
+            this.btnExportInvoice.Name = "btnExportInvoice";
+            this.btnExportInvoice.Size = new System.Drawing.Size(126, 41);
+            this.btnExportInvoice.TabIndex = 6;
+            this.btnExportInvoice.Text = "In Hóa Đơn";
+            this.btnExportInvoice.UseVisualStyleBackColor = true;
+            this.btnExportInvoice.Click += new System.EventHandler(this.btnExportInvoice_Click_1);
             // 
             // QuanLyHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 642);
+            this.Controls.Add(this.btnExportInvoice);
             this.Controls.Add(this.btnXemChiTiet);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.btnXoaHD);
@@ -102,7 +114,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "QuanLyHoaDonBan";
             this.Text = "QuanLyHoaDonBan";
-            this.Load += new System.EventHandler(this.QuanLyHoaDonBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -115,5 +126,6 @@
 		private System.Windows.Forms.Button btnXoaHD;
 		private System.Windows.Forms.Button exit;
 		private System.Windows.Forms.Button btnXemChiTiet;
+		private System.Windows.Forms.Button btnExportInvoice;
 	}
 }

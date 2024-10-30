@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            //this.jj = new System.Windows.Forms.Label();
             this.plTenNV = new System.Windows.Forms.Panel();
             this.lbTenNV = new System.Windows.Forms.Label();
             this.plCV = new System.Windows.Forms.Panel();
@@ -73,27 +73,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // jj
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mistral", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(161, -3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(405, 71);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Quản lý bán kính";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.jj.AutoSize = true;
+            //this.jj.Font = new System.Drawing.Font("Microsoft Tai Le", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.jj.Location = new System.Drawing.Point(133, -3);
+            //this.jj.Name = "jj";
+            //this.jj.Size = new System.Drawing.Size(484, 77);
+            //this.jj.TabIndex = 8;
+            //this.jj.Text = "Quản lý bán kính";
+            //this.jj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //this.jj.Click += new System.EventHandler(this.label1_Click);
             // 
             // plTenNV
             // 
             this.plTenNV.BackColor = System.Drawing.SystemColors.Control;
             this.plTenNV.Controls.Add(this.lbTenNV);
             this.plTenNV.Dock = System.Windows.Forms.DockStyle.Right;
-            this.plTenNV.Location = new System.Drawing.Point(759, 0);
+            this.plTenNV.Location = new System.Drawing.Point(774, 0);
             this.plTenNV.Name = "plTenNV";
-            this.plTenNV.Size = new System.Drawing.Size(167, 74);
+            this.plTenNV.Size = new System.Drawing.Size(152, 74);
             this.plTenNV.TabIndex = 10;
+            //this.plTenNV.Paint += new System.Windows.Forms.PaintEventHandler(this.plTenNV_Paint);
             // 
             // lbTenNV
             // 
@@ -104,12 +105,13 @@
             this.lbTenNV.TabIndex = 0;
             this.lbTenNV.Text = "label2";
             this.lbTenNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            //this.lbTenNV.Click += new System.EventHandler(this.lbTenNV_Click);
             // 
             // plCV
             // 
             this.plCV.Controls.Add(this.lbCV);
             this.plCV.Dock = System.Windows.Forms.DockStyle.Right;
-            this.plCV.Location = new System.Drawing.Point(592, 0);
+            this.plCV.Location = new System.Drawing.Point(607, 0);
             this.plCV.Name = "plCV";
             this.plCV.Size = new System.Drawing.Size(167, 74);
             this.plCV.TabIndex = 11;
@@ -129,7 +131,7 @@
             this.QLNV.Location = new System.Drawing.Point(3, 197);
             this.QLNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QLNV.Name = "QLNV";
-            this.QLNV.Size = new System.Drawing.Size(150, 35);
+            this.QLNV.Size = new System.Drawing.Size(180, 35);
             this.QLNV.TabIndex = 0;
             this.QLNV.Text = "Quản lý nhân viên";
             this.QLNV.UseVisualStyleBackColor = true;
@@ -140,7 +142,7 @@
             this.QLKH.Location = new System.Drawing.Point(3, 119);
             this.QLKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QLKH.Name = "QLKH";
-            this.QLKH.Size = new System.Drawing.Size(150, 35);
+            this.QLKH.Size = new System.Drawing.Size(180, 35);
             this.QLKH.TabIndex = 1;
             this.QLKH.Text = "Quản lý khách hàng";
             this.QLKH.UseVisualStyleBackColor = true;
@@ -151,7 +153,7 @@
             this.QLHDB.Location = new System.Drawing.Point(3, 158);
             this.QLHDB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QLHDB.Name = "QLHDB";
-            this.QLHDB.Size = new System.Drawing.Size(150, 35);
+            this.QLHDB.Size = new System.Drawing.Size(180, 35);
             this.QLHDB.TabIndex = 2;
             this.QLHDB.Text = "Quản lý hóa đơn bán";
             this.QLHDB.UseVisualStyleBackColor = true;
@@ -162,7 +164,7 @@
             this.QLHDN.Location = new System.Drawing.Point(3, 2);
             this.QLHDN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QLHDN.Name = "QLHDN";
-            this.QLHDN.Size = new System.Drawing.Size(150, 35);
+            this.QLHDN.Size = new System.Drawing.Size(180, 35);
             this.QLHDN.TabIndex = 3;
             this.QLHDN.Text = "Quản lý hóa đơn nhập";
             this.QLHDN.UseVisualStyleBackColor = true;
@@ -173,7 +175,7 @@
             this.QLNCC.Location = new System.Drawing.Point(3, 80);
             this.QLNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QLNCC.Name = "QLNCC";
-            this.QLNCC.Size = new System.Drawing.Size(150, 35);
+            this.QLNCC.Size = new System.Drawing.Size(180, 35);
             this.QLNCC.TabIndex = 4;
             this.QLNCC.Text = "Quản lý nhà cung cấp";
             this.QLNCC.UseVisualStyleBackColor = true;
@@ -184,7 +186,7 @@
             this.QLDMHH.Location = new System.Drawing.Point(3, 41);
             this.QLDMHH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QLDMHH.Name = "QLDMHH";
-            this.QLDMHH.Size = new System.Drawing.Size(150, 35);
+            this.QLDMHH.Size = new System.Drawing.Size(180, 35);
             this.QLDMHH.TabIndex = 5;
             this.QLDMHH.Text = "Quản lý hàng hóa";
             this.QLDMHH.UseVisualStyleBackColor = true;
@@ -220,7 +222,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.plCV);
             this.panel1.Controls.Add(this.plTenNV);
-            this.panel1.Controls.Add(this.label1);
+            //this.panel1.Controls.Add(this.jj);
             this.panel1.Location = new System.Drawing.Point(166, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(926, 74);
@@ -255,7 +257,7 @@
             this.groupBox3.Controls.Add(this.flowLayoutPanel2);
             this.groupBox3.Location = new System.Drawing.Point(7, 415);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(183, 125);
+            this.groupBox3.Size = new System.Drawing.Size(193, 125);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tài khoản";
@@ -266,7 +268,7 @@
             this.flowLayoutPanel2.Controls.Add(this.exit);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(13, 21);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(157, 81);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(174, 81);
             this.flowLayoutPanel2.TabIndex = 14;
             // 
             // rspass
@@ -274,7 +276,7 @@
             this.rspass.Location = new System.Drawing.Point(3, 2);
             this.rspass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rspass.Name = "rspass";
-            this.rspass.Size = new System.Drawing.Size(150, 35);
+            this.rspass.Size = new System.Drawing.Size(171, 35);
             this.rspass.TabIndex = 19;
             this.rspass.Text = "Đổi mật khẩu";
             this.rspass.UseVisualStyleBackColor = true;
@@ -284,7 +286,7 @@
             this.exit.Location = new System.Drawing.Point(3, 41);
             this.exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(150, 35);
+            this.exit.Size = new System.Drawing.Size(171, 35);
             this.exit.TabIndex = 9;
             this.exit.Text = "Đăng xuất";
             this.exit.UseVisualStyleBackColor = true;
@@ -299,6 +301,7 @@
             this.MenuQL.TabIndex = 17;
             this.MenuQL.TabStop = false;
             this.MenuQL.Text = "Menu";
+            //this.MenuQL.Enter += new System.EventHandler(this.MenuQL_Enter);
             // 
             // groupBox1
             // 
@@ -355,6 +358,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "Thêm nhân viên";
             this.button3.UseVisualStyleBackColor = true;
+            //this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -365,6 +369,7 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "Tìm kiếm nhân viên";
             this.button4.UseVisualStyleBackColor = true;
+            //this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -428,6 +433,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.MenuQL.ResumeLayout(false);

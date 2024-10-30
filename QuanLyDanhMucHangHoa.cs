@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -206,5 +207,35 @@ namespace BTL_LTTQ_VIP
                 MessageBox.Show("Vui lòng chọn hàng hóa cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-    }
+
+		private void btnXuatExcel_Click(object sender, EventArgs e)
+		{
+			SaveFileDialog saveFileDialog = new SaveFileDialog
+			{
+				Filter = "Excel files (*.xlsx)|*.xlsx",
+				Title = "Lưu file Quản lí Hàng Hóa"
+			};
+
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				try
+				{
+					using (XLWorkbook workbook = new XLWorkbook())
+					{
+						DataTable dataTable = (DataTable)dataGridView1.DataSource;
+
+						workbook.Worksheets.Add(dataTable, "DanhMucHangHoa");
+
+						workbook.SaveAs(saveFileDialog.FileName);
+
+						MessageBox.Show("Xuất file Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Lỗi khi xuất file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+		}
+	}
 }

@@ -38,19 +38,10 @@ namespace BTL_LTTQ_VIP
 
             if (isAuthenticated)
             {
-                if (checkBox1.Checked)
-                {
-                    SaveCredentials(userInput, pass);
-                }
-                else
-                {
-                    ClearSavedCredentials();
-                }
-
                 Home homeForm = new Home
                 {
-                    TenNV = tenNV,
-                    CongViec = tenCV
+                    TenNV = tenNV, // Gán tên nhân viên
+                    CongViec = tenCV // Gán công việc
                 };
                 homeForm.Show();
                 this.Hide();
@@ -91,6 +82,8 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
+
+
         private (bool isAuthenticated, string tenNV, string tenCV) AuthenticateUser(string userInput, string password)
         {
             using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
@@ -118,10 +111,9 @@ namespace BTL_LTTQ_VIP
                 }
             }
         }
-        private void button3_Click(object sender, EventArgs e)
-        {
 
-        }
+
+
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -136,5 +128,7 @@ namespace BTL_LTTQ_VIP
             ResetPassword rs = new ResetPassword();
             rs.Show();
         }
+
+        
     }
 }

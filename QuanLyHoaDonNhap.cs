@@ -7,23 +7,23 @@ namespace BTL_LTTQ_VIP
 {
 	public partial class QuanLyHoaDonNhap : Form
 	{
-        private string TenNV;
-        private string CongViec;
-        public QuanLyHoaDonNhap()
+		private string TenNV;
+		private string CongViec;
+		public QuanLyHoaDonNhap()
 		{
 			InitializeComponent();
 			LoadData();
 		}
 
-        public QuanLyHoaDonNhap(string tenNV, string congViec)
-        {
-            InitializeComponent();
-            TenNV = tenNV;   // Set user information
-            CongViec = congViec;
-            LoadData();
-        }
+		public QuanLyHoaDonNhap(string tenNV, string congViec)
+		{
+			InitializeComponent();
+			TenNV = tenNV;   // Set user information
+			CongViec = congViec;
+			LoadData();
+		}
 
-        private void LoadData()
+		private void LoadData()
 		{
 			using (SqlConnection connection = new SqlConnection(databaselink.ConnectionString))
 			{
@@ -67,14 +67,14 @@ namespace BTL_LTTQ_VIP
 				string soHDN = selectedRow.Cells["SoHDN"].Value.ToString();
 				int maNV = Convert.ToInt32(selectedRow.Cells["MaNV"].Value);
 				int maHang = Convert.ToInt32(selectedRow.Cells["MaHang"].Value);
-				int soLuong = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
+				int maNCC= Convert.ToInt32(selectedRow.Cells["MaNCC"].Value);
+                int soLuong = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
 				decimal donGia = Convert.ToDecimal(selectedRow.Cells["DonGia"].Value);
 				decimal giamGia = Convert.ToDecimal(selectedRow.Cells["GiamGia"].Value);
 				decimal thanhTien = Convert.ToDecimal(selectedRow.Cells["ThanhTien"].Value);
 				DateTime ngayNhap = Convert.ToDateTime(selectedRow.Cells["NgayNhap"].Value);
 
-				// Mở form ThemChiTietHoaDonNhap với chế độ chỉnh sửa
-				ThemChiTietHoaDonNhap themChiTietHoaDonNhap = new ThemChiTietHoaDonNhap(true, soHDN, maHang, soLuong, donGia, giamGia, thanhTien, ngayNhap, maNV);
+				ThemChiTietHoaDonNhap themChiTietHoaDonNhap = new ThemChiTietHoaDonNhap(true, soHDN, maHang,maNCC, soLuong, donGia, giamGia, thanhTien, ngayNhap, maNV);
 				themChiTietHoaDonNhap.Show();
 			}
 			else
@@ -161,28 +161,24 @@ namespace BTL_LTTQ_VIP
 			}
 			if (dataGridView1.Columns[e.ColumnIndex].Name == "DonGia")
 			{
-				// Kiểm tra nếu giá trị không phải là DBNull
 				if (e.Value != DBNull.Value && e.Value != null)
 				{
-					// Chuyển đổi giá trị thành decimal
 					decimal value = Convert.ToDecimal(e.Value);
 
-					// Định dạng lại giá trị nếu là số nguyên
 					e.Value = value % 1 == 0 ? value.ToString("0") : value.ToString("0.##");
 					e.FormattingApplied = true;
 				}
 			}
 		}
 
-        private void exit_Click(object sender, EventArgs e)
-        {
-            Home homeForm = new Home
-            {
-                TenNV = TenNV,
-                CongViec = CongViec
-            };
-            homeForm.Show();
-            this.Close();
-        }
-    }
+		
+
+		private void exit_Click_1(object sender, EventArgs e)
+		{
+			//Home home=new Home();	
+			//home.Show();
+			this.Close();
+
+		}
+	}
 }

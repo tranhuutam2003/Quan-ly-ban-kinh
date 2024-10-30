@@ -1,4 +1,9 @@
-﻿using System;
+﻿using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Bouncycastlefips;
+using iText.Bouncycastle;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,28 +13,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing.Printing;
 
 namespace BTL_LTTQ_VIP
 {
-    public partial class QuanLyHoaDonBan : Form
-    {
-        private string TenNV;
-        private string CongViec;
+	public partial class QuanLyHoaDonBan : Form
+	{
+		private string TenNV;
+		private string CongViec;
+        private string MaNV;
 
-
+        //private string maNV; // Khai báo biến mã nhân viên
+        //private string tenNV;
         public QuanLyHoaDonBan()
-        {
+		{
+            //this.maNV = maNV; // Gán mã nhân viên từ tham số
+            //this.tenNV = tenNV;
             InitializeComponent();
 			LoadData();
-        }
+		}
+
+		public QuanLyHoaDonBan(string tenNV,string maNV, string congViec)
+		{
+			InitializeComponent();
+			TenNV = tenNV;   // Set user information
+			CongViec = congViec;
+			LoadData();
+		}
 
         public QuanLyHoaDonBan(string tenNV, string congViec)
         {
-            InitializeComponent();
-            TenNV = tenNV;   // Set user information
+            TenNV = tenNV;
             CongViec = congViec;
-            LoadData();
         }
 
         private void LoadData()
@@ -46,18 +61,18 @@ namespace BTL_LTTQ_VIP
 					//                           INNER JOIN ChiTietHoaDonBan cthdb ON hdb.SoHDB = cthdb.SoHDB";
 
 					string query = @"SELECT 
-    hdb.SoHDB,
-    hdb.MaNV,
-    hdb.NgayBan,
-    hdb.MaKhach,
-    SUM(ct.Soluong) AS TongSoLuongSanPham,
-    hdb.TongTien AS ThanhTien
-FROM 
-    HoaDonBan hdb
-JOIN 
-    ChiTietHoaDonBan ct ON hdb.SoHDB = ct.SoHDB
-GROUP BY 
-    hdb.SoHDB, hdb.MaNV, hdb.NgayBan, hdb.MaKhach, hdb.TongTien;
+					hdb.SoHDB,
+					hdb.MaNV,
+					hdb.NgayBan,
+					hdb.MaKhach,
+					SUM(ct.Soluong) AS TongSoLuongSanPham,
+					hdb.TongTien AS ThanhTien
+				FROM 
+					HoaDonBan hdb
+				JOIN 
+					ChiTietHoaDonBan ct ON hdb.SoHDB = ct.SoHDB
+				GROUP BY 
+					hdb.SoHDB, hdb.MaNV, hdb.NgayBan, hdb.MaKhach, hdb.TongTien;
 ";
 
 
@@ -82,26 +97,26 @@ GROUP BY
 
 		private void exit_Click(object sender, EventArgs e)
 		{
-            Home homeForm = new Home
-            {
-                TenNV = TenNV,
-                CongViec = CongViec
-            };
-            homeForm.Show();
-            this.Close();
+			//Home homeForm = new Home
+			//{
+			//	TenNV = TenNV,
+			//	CongViec = CongViec
+			//};
+			//homeForm.Show();
+			this.Close();
 
-        }
+		}
 
-        //Xem chi tiet hoa don ban
-        private void btnXemChiTiet_Click(object sender, EventArgs e)
+		//Xem chi tiet hoa don ban
+		private void btnXemChiTiet_Click(object sender, EventArgs e)
 		{
-			ChiTietHoaDonBan chiTietHoaDon= new ChiTietHoaDonBan();
+			ChiTietHoaDonBan chiTietHoaDon = new ChiTietHoaDonBan();
 			chiTietHoaDon.StartPosition = FormStartPosition.Manual;
 			chiTietHoaDon.Location = this.Location;
 			chiTietHoaDon.Show();
 		}
 
-	
+
 
 		private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
 		{
@@ -113,11 +128,11 @@ GROUP BY
 
 					if (value % 1 == 0)
 					{
-						e.Value = value.ToString("0"); 
+						e.Value = value.ToString("0");
 					}
 					else
 					{
-						e.Value = value.ToString("0.##");  
+						e.Value = value.ToString("0.##");
 					}
 					e.FormattingApplied = true;
 				}
@@ -126,12 +141,12 @@ GROUP BY
 
 		private void btnThemHD_Click(object sender, EventArgs e)
 		{
-			//ThemHoaDonBan themHoaDonBanForm = new ThemHoaDonBan(false); // false để chỉ ra rằng đây là chế độ thêm
-			//themHoaDonBanForm.Show();
-			//this.Hide();
-			HoaDonBan hoaDonBan = new HoaDonBan();
-			hoaDonBan.Show();
-		}
+            //string maNV = "Mã nhân viên"; // lấy từ thông tin đăng nhập
+            //string tenNV = "Tên nhân viên";
+            HoaDonBan hoaDonBan = new HoaDonBan(MaNV); // Truyền mã nhân viên và tên nhân viên
+            hoaDonBan.Show();
+            //this.Hide();
+        }
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -189,8 +204,104 @@ GROUP BY
 			}
 		}
 
-		private void QuanLyHoaDonBan_Load(object sender, EventArgs e)
+
+		
+
+		
+
+		private void btnExportInvoice_Click_1(object sender, EventArgs e)
 		{
+			if (dataGridView1.SelectedRows.Count > 0)
+			{
+				DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+				string soHDB = selectedRow.Cells["SoHDB"].Value.ToString();
+
+				// Lấy thông tin chi tiết hóa đơn từ database
+				string query = @"
+            SELECT 
+                hdb.NgayBan, 
+                kh.TenKhach, 
+                dh.TenHang, 
+                cthdb.SoLuong, 
+                cthdb.ThanhTien
+            FROM 
+                HoaDonBan hdb
+            JOIN 
+                KhachHang kh ON hdb.MaKhach = kh.MaKhach
+            JOIN 
+                ChiTietHoaDonBan cthdb ON hdb.SoHDB = cthdb.SoHDB
+            JOIN 
+                DanhMucHangHoa dh ON cthdb.MaHang = dh.MaHang
+            WHERE 
+                hdb.SoHDB = @SoHDB";
+
+				using (SqlConnection conn = new SqlConnection(databaselink.ConnectionString))
+				{
+					SqlCommand cmd = new SqlCommand(query, conn);
+					cmd.Parameters.AddWithValue("@SoHDB", soHDB);
+					SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+					DataTable dt = new DataTable();
+					adapter.Fill(dt);
+
+					if (dt.Rows.Count > 0)
+					{
+						// In thông tin hóa đơn
+						PrintDocument printDocument = new PrintDocument();
+						printDocument.PrintPage += (s, ev) =>
+						{
+							float yPosition = ev.MarginBounds.Top;
+							float lineHeight = ev.Graphics.MeasureString("Test", new Font("Arial", 12)).Height;
+
+							// Thêm tiêu đề hóa đơn
+							ev.Graphics.DrawString("HÓA ĐƠN BÁN HÀNG", new Font("Arial", 16, FontStyle.Bold), Brushes.Black, ev.MarginBounds.Left, yPosition);
+							yPosition += lineHeight * 2; // Tăng thêm khoảng cách
+
+							ev.Graphics.DrawString($"Mã Hóa Đơn: {soHDB}", new Font("Arial", 12), Brushes.Black, ev.MarginBounds.Left, yPosition);
+							yPosition += lineHeight;
+
+							ev.Graphics.DrawString($"Tên Khách Hàng: {dt.Rows[0]["TenKhach"]}", new Font("Arial", 12), Brushes.Black, ev.MarginBounds.Left, yPosition);
+							yPosition += lineHeight;
+
+							ev.Graphics.DrawString($"Ngày Bán: {Convert.ToDateTime(dt.Rows[0]["NgayBan"]).ToString("dd/MM/yyyy")}", new Font("Arial", 12), Brushes.Black, ev.MarginBounds.Left, yPosition);
+							yPosition += lineHeight;
+
+							ev.Graphics.DrawString("--------------------------------------------------", new Font("Arial", 12), Brushes.Black, ev.MarginBounds.Left, yPosition);
+							yPosition += lineHeight;
+
+							ev.Graphics.DrawString("Tên Hàng | Số Lượng | Thành Tiền", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, ev.MarginBounds.Left, yPosition);
+							yPosition += lineHeight;
+
+							ev.Graphics.DrawString("--------------------------------------------------", new Font("Arial", 12), Brushes.Black, ev.MarginBounds.Left, yPosition);
+							yPosition += lineHeight;
+
+							foreach (DataRow row in dt.Rows)
+							{
+								ev.Graphics.DrawString($"{row["TenHang"]} | {row["SoLuong"]} | {row["ThanhTien"]}", new Font("Arial", 12), Brushes.Black, ev.MarginBounds.Left, yPosition);
+								yPosition += lineHeight;
+							}
+						};
+
+						// Hiển thị hộp thoại in
+						PrintDialog printDialog = new PrintDialog();
+						printDialog.Document = printDocument;
+
+						if (printDialog.ShowDialog() == DialogResult.OK)
+						{
+							printDocument.Print();
+						}
+					}
+					else
+					{
+						MessageBox.Show("Không tìm thấy chi tiết hóa đơn.");
+					}
+				}
+			}
+			else
+			{
+				MessageBox.Show("Vui lòng chọn hóa đơn cần in.");
+			}
+
+
 
 		}
 	}

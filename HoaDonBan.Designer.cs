@@ -41,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbMaNV = new System.Windows.Forms.ComboBox();
             this.cbMaKhach = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.cbMaNV = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -103,7 +103,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(219, 41);
+            this.label1.Location = new System.Drawing.Point(219, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 1;
@@ -111,15 +111,15 @@
             // 
             // txtSoHDB
             // 
-            this.txtSoHDB.Location = new System.Drawing.Point(373, 38);
+            this.txtSoHDB.Location = new System.Drawing.Point(373, 28);
             this.txtSoHDB.Name = "txtSoHDB";
-            this.txtSoHDB.Size = new System.Drawing.Size(250, 22);
+            this.txtSoHDB.Size = new System.Drawing.Size(100, 22);
             this.txtSoHDB.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(219, 100);
+            this.label2.Location = new System.Drawing.Point(219, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 4;
@@ -145,27 +145,18 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(373, 149);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 7;
-            // 
-            // cbMaNV
-            // 
-            this.cbMaNV.FormattingEnabled = true;
-            this.cbMaNV.Location = new System.Drawing.Point(373, 97);
-            this.cbMaNV.Name = "cbMaNV";
-            this.cbMaNV.Size = new System.Drawing.Size(250, 24);
-            this.cbMaNV.TabIndex = 8;
-            this.cbMaNV.SelectedIndexChanged += new System.EventHandler(this.cbMaNV_SelectedIndexChanged);
             // 
             // cbMaKhach
             // 
             this.cbMaKhach.FormattingEnabled = true;
             this.cbMaKhach.Location = new System.Drawing.Point(835, 41);
             this.cbMaKhach.Name = "cbMaKhach";
-            this.cbMaKhach.Size = new System.Drawing.Size(250, 24);
+            this.cbMaKhach.Size = new System.Drawing.Size(156, 24);
             this.cbMaKhach.TabIndex = 9;
             // 
             // label6
@@ -181,7 +172,7 @@
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(835, 148);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(250, 22);
+            this.txtSoLuong.Size = new System.Drawing.Size(100, 22);
             this.txtSoLuong.TabIndex = 14;
             this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
@@ -189,7 +180,7 @@
             // 
             this.txtGiamGia.Location = new System.Drawing.Point(835, 94);
             this.txtGiamGia.Name = "txtGiamGia";
-            this.txtGiamGia.Size = new System.Drawing.Size(250, 22);
+            this.txtGiamGia.Size = new System.Drawing.Size(100, 22);
             this.txtGiamGia.TabIndex = 15;
             this.txtGiamGia.TextChanged += new System.EventHandler(this.txtGiamGia_TextChanged);
             // 
@@ -204,9 +195,9 @@
             // 
             // btnXacNhan
             // 
-            this.btnXacNhan.Location = new System.Drawing.Point(254, 552);
+            this.btnXacNhan.Location = new System.Drawing.Point(254, 577);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(125, 30);
+            this.btnXacNhan.Size = new System.Drawing.Size(147, 41);
             this.btnXacNhan.TabIndex = 17;
             this.btnXacNhan.Text = "Xác Nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
@@ -214,19 +205,28 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(660, 552);
+            this.btnBack.Location = new System.Drawing.Point(669, 577);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(125, 30);
+            this.btnBack.Size = new System.Drawing.Size(133, 41);
             this.btnBack.TabIndex = 19;
             this.btnBack.Text = "Quay Lại";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // cbMaNV
+            // 
+            this.cbMaNV.FormattingEnabled = true;
+            this.cbMaNV.Location = new System.Drawing.Point(373, 86);
+            this.cbMaNV.Name = "cbMaNV";
+            this.cbMaNV.Size = new System.Drawing.Size(121, 24);
+            this.cbMaNV.TabIndex = 20;
             // 
             // HoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 672);
+            this.Controls.Add(this.cbMaNV);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.label7);
@@ -234,7 +234,6 @@
             this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbMaKhach);
-            this.Controls.Add(this.cbMaNV);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -259,7 +258,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
-		private System.Windows.Forms.ComboBox cbMaNV;
 		private System.Windows.Forms.ComboBox cbMaKhach;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox txtSoLuong;
@@ -273,5 +271,6 @@
 		private System.Windows.Forms.ColumnHeader columnHeader8;
 		private System.Windows.Forms.ColumnHeader columnHeader9;
 		private System.Windows.Forms.Button btnBack;
-	}
+        private System.Windows.Forms.ComboBox cbMaNV;
+    }
 }

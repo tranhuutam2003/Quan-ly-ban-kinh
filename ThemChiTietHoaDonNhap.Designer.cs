@@ -54,7 +54,7 @@
             // 
             this.btnXacNhan.Location = new System.Drawing.Point(349, 602);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(125, 30);
+            this.btnXacNhan.Size = new System.Drawing.Size(107, 46);
             this.btnXacNhan.TabIndex = 35;
             this.btnXacNhan.Text = "Xác Nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
@@ -64,9 +64,9 @@
             // 
             this.btnBack.Location = new System.Drawing.Point(93, 602);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(125, 30);
+            this.btnBack.Size = new System.Drawing.Size(100, 46);
             this.btnBack.TabIndex = 34;
-            this.btnBack.Text = "Trờ lại";
+            this.btnBack.Text = "Trở Lại";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -74,21 +74,21 @@
             // 
             this.txtGiamGia.Location = new System.Drawing.Point(233, 282);
             this.txtGiamGia.Name = "txtGiamGia";
-            this.txtGiamGia.Size = new System.Drawing.Size(250, 22);
+            this.txtGiamGia.Size = new System.Drawing.Size(100, 22);
             this.txtGiamGia.TabIndex = 33;
             // 
             // txtDonGia
             // 
             this.txtDonGia.Location = new System.Drawing.Point(233, 219);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(250, 22);
+            this.txtDonGia.Size = new System.Drawing.Size(100, 22);
             this.txtDonGia.TabIndex = 32;
             // 
             // txtSoHDN
             // 
             this.txtSoHDN.Location = new System.Drawing.Point(233, 36);
             this.txtSoHDN.Name = "txtSoHDN";
-            this.txtSoHDN.Size = new System.Drawing.Size(250, 22);
+            this.txtSoHDN.Size = new System.Drawing.Size(100, 22);
             this.txtSoHDN.TabIndex = 31;
             // 
             // label5
@@ -149,35 +149,35 @@
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(233, 157);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(250, 22);
+            this.txtSoLuong.Size = new System.Drawing.Size(100, 22);
             this.txtSoLuong.TabIndex = 39;
             // 
             // txtMaHang
             // 
             this.txtMaHang.Location = new System.Drawing.Point(233, 100);
             this.txtMaHang.Name = "txtMaHang";
-            this.txtMaHang.Size = new System.Drawing.Size(250, 22);
+            this.txtMaHang.Size = new System.Drawing.Size(100, 22);
             this.txtMaHang.TabIndex = 40;
             // 
             // txtThanhTien
             // 
             this.txtThanhTien.Location = new System.Drawing.Point(233, 563);
             this.txtThanhTien.Name = "txtThanhTien";
-            this.txtThanhTien.Size = new System.Drawing.Size(250, 22);
+            this.txtThanhTien.Size = new System.Drawing.Size(100, 22);
             this.txtThanhTien.TabIndex = 41;
             // 
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(233, 354);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(250, 22);
+            this.txtMaNV.Size = new System.Drawing.Size(100, 22);
             this.txtMaNV.TabIndex = 42;
             // 
             // txtMaNCC
             // 
             this.txtMaNCC.Location = new System.Drawing.Point(233, 421);
             this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.Size = new System.Drawing.Size(250, 22);
+            this.txtMaNCC.Size = new System.Drawing.Size(100, 22);
             this.txtMaNCC.TabIndex = 44;
             // 
             // label7
@@ -209,10 +209,9 @@
             // 
             // dateTimePickerNgayNhap
             // 
-            this.dateTimePickerNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerNgayNhap.Location = new System.Drawing.Point(233, 496);
             this.dateTimePickerNgayNhap.Name = "dateTimePickerNgayNhap";
-            this.dateTimePickerNgayNhap.Size = new System.Drawing.Size(250, 22);
+            this.dateTimePickerNgayNhap.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerNgayNhap.TabIndex = 48;
             // 
             // ThemChiTietHoaDonNhap
@@ -242,6 +241,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ThemChiTietHoaDonNhap";
             this.Text = "ThemChiTietHoaDonNhap";
+            this.Load += new System.EventHandler(this.ThemChiTietHoaDonNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
