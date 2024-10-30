@@ -2,5 +2,8 @@
 {
     internal class DataVisualization
     {
+        internal class Charting
+        {
+        }
     }
 }
